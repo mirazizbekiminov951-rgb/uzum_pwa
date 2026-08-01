@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for category in category %}
+<a href="{% url 'category' category.name %}">
+    {{ category.name }}
+</a>
+{% endfor %}
+<div class="md:mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 md:w-[1300px] w-[430px]  justify-content align-items md:pl-[70px] pl-[25px] flex flex-wrap justify-between items-center mr-[50px]">
+            {% load static %}
+            {% for narsa in items %}
+            <div class="katta ">
+                <div class="relative cursor-pointer w-[24px] h-[24px]">
+                    <i
+                        class="fa-regular fa-heart absolute md:top-[30px] top-[30px] left-[105px] md:left-[250px] md:right-[20px] w-[24px] h-[20px] p-[2px] z-[2] bg-[#FFFFFF] rounded-full"></i>
+                </div>
+
+                {% if narsa.is_aksiya %}
+                <div class="relative cursor-pointer">
+                    <i
+                        class="absolute cursor-pointer md:top-[307px] md:left-[10px] font-bold left-[5px] top-[205px] w-[102px] text-[8px] h-[14px] flex p-[2px] z-[2] bg-[#FF4499] rounded-full">
+                        ARZON NARX KAFOLATI
+                    </i>
+                </div>
+                {% endif %}
+                <div
+                    class="bg-white relative mx-auto justify-content cursor-pointer align-items md:h-[520px] h-[415px]">
+                    <div class="md:relative a md:pl-[5px] pr-[-155px]">
+                        <img src="{{ narsa.rasm.url }}" alt=""
+                            class="md:w-[269px] md:h-[325px] cursor-pointer w-[135px] h-[225px] rounded-[12px] ">
+                        <div class=" relative">
+                            <img class="w-[45px] absolute md:top-[-310px] top-[-200px] left-[-7px] md:left-[-7px]"
+                                src="https://static.uzum.uz/static/product_badge/6f469e5d-5e6c-4b16-b8e6-7b8135956bbe"
+                                alt="" class="absolute top-0 left-0 w-[100px] h-[100px]">
+                        </div>
+                        <div class="svg flex">
+                            <h2 class="text-[#000] font-semibold">{{ narsa.narxi }}</h2>
+                        </div>
+                        <h2 class="text-[#ccc] line-through">{{ narsa.skidka }}</h2>
+                        <h2
+                            class="md:text-[12px] text-[9px] bg-[#FFFF00] text-black md:w-[105px] w-[80px] md:h-[18px] h-[15px] rounded-[5px]">
+                            24 790 so'm/oyiga
+                        </h2>
+                        {% if narsa.is_aksiya %}
+                        <h2 class="text-[11px] text-[#8F63FF] font-semibold w-[115px]">Arzonlashdi</h2>
+                        {% endif %}
+                        <a href="{% url 'detail' narsa.id %}">
+                            <h2 class="text-[11px] text-[#4D4D52] md:w-[205px] w-[135px]">{{ narsa.nomi }}</h2>
+                        </a>
+                        <h2 class="text-[11px] text-[#9FA1AB]">⭐️ {{ narsa.rate }} (1656 sharhlar)</h2>
+                        <button
+                            class="bg-[#1722ea] absolute md:bottom-[-50px] absolute md:bottom-[-10px] bottom-[0px] flex text-white md:w-[269px] w-[135px] pt-[5px] h-[35px] md:pl-[55px] pl-[25px] pr-[20px] rounded-[5px]"><svg
+                                class="md:ml-[50px] mr-[5px] mt-[5px]" data-v-afbc5418="" width="16" height="16"
+                                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="ui-icon cart-button__icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.93384 4.90479V6.40055C4.93384 6.67669 5.1577 6.90055 5.43384 6.90055C5.70998 6.90055 5.93384 6.67669 5.93384 6.40055V4.90055H10.2672V6.40055C10.2672 6.6767 10.491 6.90055 10.7672 6.90055C11.0433 6.90055 11.2672 6.6767 11.2672 6.40055V4.90479C11.4272 4.90795 11.5656 4.91349 11.6891 4.92318C11.967 4.94496 12.1296 4.98556 12.2558 5.04548C12.5247 5.17311 12.7495 5.37785 12.9017 5.63364C12.9731 5.75371 13.0287 5.91178 13.0764 6.18643C13.125 6.46716 13.1593 6.82852 13.208 7.34854L13.311 8.44722C13.3368 8.72216 13.5806 8.92415 13.8555 8.89837C14.1305 8.8726 14.3324 8.62882 14.3067 8.35388L14.2018 7.23504C14.1554 6.73994 14.1178 6.33946 14.0616 6.01556C14.0037 5.68119 13.9201 5.38953 13.7611 5.12236C13.5075 4.69604 13.1328 4.35481 12.6846 4.14209C12.4038 4.00878 12.1056 3.95276 11.7673 3.92624C11.6064 3.91363 11.4276 3.90721 11.2285 3.90394C10.9902 2.39095 9.68046 1.23389 8.10051 1.23389C6.52056 1.23389 5.21086 2.39095 4.97256 3.90394C4.77338 3.90721 4.59458 3.91363 4.43373 3.92624C4.09541 3.95276 3.79722 4.00878 3.51637 4.14209C3.06825 4.35481 2.69353 4.69604 2.43991 5.12236C2.28096 5.38953 2.19736 5.68119 2.13937 6.01556C2.0832 6.33946 2.04566 6.73993 1.99925 7.23501L1.59526 11.5442C1.54017 12.1318 1.49588 12.6043 1.49241 12.9873C1.48886 13.3806 1.52662 13.7286 1.66648 14.0541C1.88752 14.5686 2.27487 14.9939 2.76646 15.262C3.0775 15.4317 3.42047 15.5018 3.81232 15.5349C4.19406 15.5672 4.66858 15.5672 5.25874 15.5672H8.10051C8.37665 15.5672 8.60051 15.3434 8.60051 15.0672C8.60051 14.7911 8.37665 14.5672 8.10051 14.5672H5.28121C4.66335 14.5672 4.23123 14.5668 3.89666 14.5385C3.56736 14.5106 3.38188 14.4586 3.24525 14.3841C2.9503 14.2233 2.71789 13.968 2.58527 13.6594C2.52383 13.5164 2.48938 13.3268 2.49237 12.9964C2.49541 12.6606 2.53532 12.2304 2.59299 11.6152L2.99299 7.34853C3.04175 6.82852 3.07598 6.46716 3.12467 6.18643C3.17229 5.91178 3.22789 5.75371 3.29932 5.63364C3.4515 5.37785 3.67633 5.17311 3.9452 5.04547C4.07142 4.98556 4.23399 4.94496 4.51188 4.92318C4.63541 4.91349 4.77386 4.90795 4.93384 4.90479ZM5.99182 3.90055H10.2092C9.98348 2.94499 9.12504 2.23389 8.10051 2.23389C7.07598 2.23389 6.21754 2.94499 5.99182 3.90055ZM12.1005 9.90055C12.3767 9.90055 12.6005 10.1244 12.6005 10.4006V11.9006H14.1005C14.3767 11.9006 14.6005 12.1244 14.6005 12.4006C14.6005 12.6767 14.3767 12.9006 14.1005 12.9006H12.6005V14.4006C12.6005 14.6767 12.3767 14.9006 12.1005 14.9006C11.8244 14.9006 11.6005 14.6767 11.6005 14.4006V12.9006H10.1005C9.82437 12.9006 9.60051 12.6767 9.60051 12.4006C9.60051 12.1244 9.82437 11.9006 10.1005 11.9006H11.6005V10.4006C11.6005 10.1244 11.8244 9.90055 12.1005 9.90055Z"
+                                    fill="white"></path>
+                            </svg>Ertaga</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="w-full  flex items-center justify-center py-12 px-4 bg-[#f8fafc]">
+  <div class="w-full max-w-[420px] bg-[#ffffff] rounded-[10px] border border-[#e2e8f0] p-8 shadow-md">
+
+    <h2 class="text-[#0f172a] text-center font-semibold text-[24px] mb-[24px]">Ro'yxatdan o'tish</h2>
+
+
+    <form method="post" class="flex flex-col gap-y-[12px]">
+      {% csrf_token %}
+
+      <div class="w-full h-[42px] bg-[#f1f5f9] rounded-[6px] border border-[#cbd5e1] flex items-center ">
+        <span
+          class="w-[42px] h-full bg-[#e2e8f0] flex items-center justify-center text-[#64748b] rounded-l-[5px] border-r border-[#cbd5e1]">
+          <i class="fa-solid fa-envelope"></i>
+        </span>
+        <input class="w-full h-full  px-[14px] text-sm text-[#0f172a] placeholder-[#94a3b8]" type="email"
+          placeholder="Email" name="email" required>
+      </div>
+
+      <div class="w-full h-[42px] bg-[#f1f5f9] rounded-[6px] border border-[#cbd5e1] flex items-center">
+        <span
+          class="w-[42px] h-full bg-[#e2e8f0] flex items-center justify-center text-[#64748b] rounded-l-[5px] border-r border-[#cbd5e1]">
+          <i class="fa-solid fa-user"></i>
+        </span>
+        <input class="w-full h-full  px-[14px] text-sm text-[#0f172a] placeholder-[#94a3b8] " type="text"
+          placeholder="Username" name="username" required>
+      </div>
+
+      <div class="w-full h-[42px] bg-[#f1f5f9] rounded-[6px] border border-[#cbd5e1] flex items-center ">
+        <span
+          class="w-[42px] h-full bg-[#e2e8f0] flex items-center justify-center text-[#64748b] rounded-l-[5px] border-r border-[#cbd5e1]">
+          <i class="fa-solid fa-lock"></i>
+        </span>
+        <input class="w-full h-full  px-[14px] text-sm text-[#0f172a] placeholder-[#94a3b8] " type="password"
+          placeholder="Password" name="password" required>
+      </div>
+
+      <div class="w-full h-[42px] bg-[#f1f5f9] rounded-[6px] border border-[#cbd5e1] flex items-center ">
+        <span
+          class="w-[42px] h-full bg-[#e2e8f0] flex items-center justify-center text-[#64748b] rounded-l-[5px] border-r border-[#cbd5e1]">
+          <i class="fa-solid fa-lock"></i>
+        </span>
+        <input class="w-full h-full  px-[14px] text-sm text-[#0f172a] placeholder-[#94a3b8] " type="password"
+          placeholder="Coniform_password" name="coniform_password" required>
+      </div>
+
+      <div class="w-full flex items-center pt-[4px]">
+        <input class="w-[18px] h-[18px] bg-[#f1f5f9] border border-[#cbd5e1] rounded  cursor-pointer" type="checkbox"
+          id="terms" required>
+        <label for="terms" class="text-sm pl-[10px] text-[#64748b] cursor-pointer ">
+          <a class="text-[#0f172a] hover:underline" href="">foydalanuvchi shartlariga</a> roziman
+        </label>
+      </div>
+
+      <button
+        class="w-full bg-[#638b34] hover:bg-[#52742b] h-[40px] text-center rounded-[6px] font-medium text-[#ffffff]  mt-[6px]">
+        Davom etish
+      </button>
+    </form>
+
+  </div>
+</div>
+{% endblock %}

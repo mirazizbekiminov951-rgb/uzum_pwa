@@ -1,0 +1,647 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+    body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1f2026;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .thumbsSwiper .swiper-slide {
+            cursor: pointer;
+            border: 1.5px solid transparent;
+            transition: border-color 0.15s ease;
+        }
+
+        .thumbsSwiper .swiper-slide-thumb-active {
+            border-color: #000000 !important;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            background-color: #ffffff !important;
+            width: 32px !important;
+            height: 32px !important;
+            border-radius: 50%;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 11px !important;
+            color: #000000 !important;
+            font-weight: bold;
+        }
+        body {
+    font-family: Inter;
+    font-weight: 400;
+    src: url(https://static.uzum.uz/fonts/Inter_Regular.woff2) format("woff2"), url(./Inter_Regular.CKDp9E3C.woff2?url) format("opentype");
+  }
+
+  #terma {
+    font-family:
+      TT Uzum,
+      sans-serif;
+    src:
+      url(https://static.uzum.uz/fonts/TT_Uzum_Regular.woff2) format("woff2"), py url(/landings/_nuxt/TT_Uzum_Regular.DKYLOcHA.woff2?url) format("opentype");
+  }
+body {
+    font-family: Inter;
+    font-weight: 400;
+    src: url(https://static.uzum.uz/fonts/Inter_Regular.woff2) format("woff2"), url(./Inter_Regular.CKDp9E3C.woff2?url) format("opentype");
+  }
+
+  #terma {
+    font-family:
+      TT Uzum,
+      sans-serif;
+    src:
+      url(https://static.uzum.uz/fonts/TT_Uzum_Regular.woff2) format("woff2"), py url(/landings/_nuxt/TT_Uzum_Regular.DKYLOcHA.woff2?url) format("opentype");
+  }
+
+</style>
+<div class="md:w-[1240px] mx-auto">
+
+        <nav
+            class="text-[13px] ml-[30px] text-[#8b8e99] mb-[16px] md:px-[0px] px-[10px] flex items-center gap-[8px] overflow-x-auto whitespace-nowrap scrollbar-hide">
+            <a href="#" class="hover:text-[#1f2026]">Bosh sahifa</a> <span><img width="13" height="13"
+                    src="https://img.icons8.com/ios-glyphs/30/7e818c/chevron-right.png" alt="chevron-right" /></span>
+            <a href="#" class="hover:text-[#1f2026]">Barcha toifalar</a> <span><img width="13" height="13"
+                    src="https://img.icons8.com/ios-glyphs/30/7e818c/chevron-right.png" alt="chevron-right" /></span>
+            <a href="#" class="hover:text-[#1f2026]">Oziq-ovqat mahsulotlari</a> <span><img width="13" height="13"
+                    src="https://img.icons8.com/ios-glyphs/30/7e818c/chevron-right.png" alt="chevron-right" /></span>
+            <a href="#" class="hover:text-[#1f2026]">Asal, murabbo, shirin konservalar</a> <span><img width="13"
+                    height="13" src="https://img.icons8.com/ios-glyphs/30/7e818c/chevron-right.png"
+                    alt="chevron-right" /></span>
+            <a href="#" class="hover:text-[#1f2026]">Quyultirilgan sut</a> <span><img width="13" height="13"
+                    src="https://img.icons8.com/ios-glyphs/30/7e818c/chevron-right.png" alt="chevron-right" /></span>
+            <span class="text-[#8b8e99]">Quyultirilgan sut</span>
+        </nav>
+
+        <div class="flex flex-col md:flex-row md:gap-[20px] items-start">
+
+            <div class="flex w-full md:w-auto md:shrink-0 md:px-[0px] px-[10px] md:mb-[0px] mb-[10px] ">
+
+                
+
+                <div class="relative  w-full mt-[-10px] md:w-[426px] aspect-[426/560] rounded-[16px] overflow-hidden">
+                    <div class="swiper mainSwiper h-full w-full">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide flex items-center justify-center p-[12px]"><img
+                                    src="{{ mahsulot.rasm.url }}"
+                                    class="h-full w-full rounded-[20px] object-cover"></div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev !left-[25px]"></div>
+                    <div class="swiper-button-next !right-[25px]"></div>
+                </div>
+            </div>
+            <div
+                class="bg-[#f4f5f7] md:bg-white rounded-[18px] flex flex-col md:flex-row justify-between items-start gap-[16px] md:gap-[32px] w-full max-w-[1200px] mx-auto p-[0px]">
+
+                <div
+                    class="w-full md:flex-1 bg-white p-[16px] md:p-[0px] border border-t-2 border-t-[#d1d5db] border-b-0 border-l-0 md:border-[0px] border-r-0 rounded-[18px] md:rounded-[0px] flex flex-col gap-[12px]">
+                    <h1 class="md:text-[23px] text-[18px] font-semibold text-[#1f2026]">
+                        {{mahsulot.nomi}}
+                    </h1>
+
+
+                    <div class="flex flex-wrap items-center gap-[4px] text-[14px] text-[#8b8e99]">
+                        <span class="flex">
+                            <img width="14" height="14"
+                                src="https://img.icons8.com/material-rounded/24/FAB005/star--v1.png" alt="star" />
+                            <img width="14" height="14"
+                                src="https://img.icons8.com/material-rounded/24/FAB005/star--v1.png" alt="star" />
+                            <img width="14" height="14"
+                                src="https://img.icons8.com/material-rounded/24/FAB005/star--v1.png" alt="star" />
+                            <img width="14" height="14"
+                                src="https://img.icons8.com/material-rounded/24/FAB005/star--v1.png" alt="star" />
+                            <img width="14" height="14"
+                                src="https://img.icons8.com/material-rounded/24/FAB005/star--v1.png" alt="star" />
+                        </span>
+                        <span class="font-medium text-[#7e818c] underline ml-[2px] cursor-pointer">5 (1851 sharh)</span>
+                        <span class="mx-[4px]"><img width="7" height="7"
+                                src="https://img.icons8.com/material-sharp/24/7e83ad/full-stop.png" alt="dot" /></span>
+                        <span class="text-[#7e818c] cursor-pointer">37 fotosurat</span>
+                        <span class="mx-[4px]"><img width="7" height="7"
+                                src="https://img.icons8.com/material-sharp/24/7e83ad/full-stop.png" alt="dot" /></span>
+                        <span>16000+ buyurtma</span>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-[380px] flex flex-col gap-[12px] md:shrink-0 p-[0px]">
+                    <div
+                        class="bg-white md:border md:border-[#D8D8DA] rounded-[18px] md:rounded-[16px] p-[16px] md:p-[20px] flex flex-col">
+                        <div
+                            class="w-full bg-[#f2f4f7] md:bg-transparent p-[16px] md:p-[0px] rounded-[14px] md:rounded-[0px] flex flex-col mb-[12px] md:mb-[16px]">
+                            <h1 class="text-[32px] font-bold text-[#ff00a0] mb-[2px] leading-tight">{{mahsulot.narxi}}</h1>
+                            <div class="line-through">
+                                <h2 class="text-[16px] text-[#8b8e99] leading-none">{{mahsulot.skidka}}</h2>
+                            </div>
+                        </div>
+
+                        <div class="bg-[#f2f4f7] rounded-[14px] p-[6px] mb-[16px]">
+                            <div
+                                class="flex justify-between text-[11px] font-semibold text-[#5c6170] text-center py-[5px] mb-[6px]">
+                                <span
+                                    class="bg-white text-[#1f2026] flex-1 py-[4px] rounded-[8px] shadow-xs cursor-pointer">24
+                                    oy</span>
+                                <span class="flex-1 py-[4px] cursor-pointer">12 oy</span>
+                                <span class="flex-1 py-[4px] cursor-pointer">6 oy</span>
+                                <span class="flex-1 py-[4px] cursor-pointer">3 oy</span>
+                            </div>
+
+
+                            <div
+                                class="flex items-center justify-between bg-transparent md:bg-[#f5f5f7] rounded-[10px] p-[6px] md:p-[10px] text-[13px]">
+                                <div class="flex items-center gap-[6px]">
+                                    <span
+                                        class="bg-[#ffff00] font-bold text-[#000000] px-[10px] py-[2px] rounded-[10px] text-[15px]">2
+                                        832 so'm</span>
+                                    <span class="text-[12px] font-semibold text-[#1f2026]">x 24 oy</span>
+                                </div>
+                                <span><img width="14" height="14"
+                                        src="https://img.icons8.com/ios-glyphs/30/7e83ad/chevron-right.png"
+                                        alt="arrow" /></span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-[10px] hidden md:flex">
+                            <div class="flex gap-[10px]">
+                                <button
+                                    class="flex-1 bg-[#f2f4f7] text-[#111] font-medium h-[48px] rounded-[12px] text-[15px] cursor-pointer">
+                                    1 klikda xarid qilish
+                                </button>
+                                <button
+                                    class="bg-[#f2f4f7] w-[48px] h-[48px] rounded-[12px] flex items-center justify-center cursor-pointer text-[20px]">
+                                    <img width="20" height="20"
+                                        src="https://img.icons8.com/material-outlined/24/7e83ad/filled-like.png"
+                                        alt="hearts" />
+                                </button>
+                            </div>
+                            <button
+                                class="w-full bg-[#7000ff] text-white font-medium h-[52px] rounded-[12px] text-[#fff] text-[16px] flex flex-col items-center justify-center shadow-xs cursor-pointer hover:bg-[#6000e0] transition-colors">
+                                <span class="font-semibold">Savatga qo'shish</span>
+                                <span class="text-[11px] font-normal">Ertaga yetkazib beramiz</span>
+                            </button>
+                        </div>
+
+                        <div
+                            class="flex flex-col gap-[12px] mt-[4px] md:mt-[20px] pt-[16px] md:border-t md:border-[#f2f4f7] text-[13px]">
+                            <div class="flex items-center gap-[8px]">
+                                <span
+                                    class="bg-[#D7F5DD] w-[32px] h-[32px] rounded-[10px] flex items-center justify-center">
+                                    <img width="20" height="20"
+                                        src="https://img.icons8.com/ios-filled/50/7e83ad/checkmark--v1.png"
+                                        alt="check" />
+                                </span>
+                                <span class="text-[#1f2026]">2296 dona xarid qilish mumkin</span>
+                            </div>
+                            <div class="flex items-center gap-[8px]">
+                                <span class="w-[32px] h-[32px] flex items-center justify-center">
+                                    <img src="https://img.icons8.com/windows/32/7000ff/shopping-bag.png" alt="bag">
+                                </span>
+                                <span class="text-[14px] text-[#1f2026]">Bu haftada 49 kishi sotib oldi</span>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div
+                        class="bg-white border border-[#e5e7eb] md:border-[#D7D7D9] rounded-[18px] md:rounded-[16px] p-[16px] mb-[120px] md:mb-[0px]">
+                        <div class="font-semibold text-[#1f2026] text-[20px] mb-[2px]">Ertaga yetkazib beramiz</div>
+                        <div class="text-[14px] text-[#5c6170]">Topshirish punktiga yoki kuryer orqali</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div
+                class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#B8BABE] p-[12px] flex items-center justify-between gap-[12px]">
+                <div>
+                    <div class="text-[13px] text-[#8b8e99] line-through leading-none">{{ mahsulot.narxi }}</div>
+                    <div class="text-[18px] font-bold text-[#000] leading-tight">{{mahsulot.skidka}}</div>
+                </div>
+                <button
+                    class="bg-[#7000ff] text-white font-medium h-[52px] px-[24px] rounded-[12px] text-[15px] flex flex-col items-center justify-center cursor-pointer hover:bg-[#6000e0]">
+                    <span class="font-semibold">Savatga</span>
+                    <span class="text-[11px] font-normal">Ertaga yetkazib beramiz</span>
+                </button>
+            </div>
+
+
+            <div
+                class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-[#B8BABE] p-[12px] flex items-center justify-between gap-[12px]">
+                <div>
+                    <div class="text-[13px] text-[#8b8e99] line-through leading-none">{{ mahsulot.narxi }}</div>
+                    <div class="text-[18px] font-bold text-[#000] leading-tight">{{mahsulot.skidka}}</div>
+                </div>
+                <button
+                    class="bg-[#7000ff] text-white font-medium h-[52px] px-[24px] rounded-[12px] text-[15px] flex flex-col items-center justify-center cursor-pointer hover:bg-[#6000e0]">
+                    <span class="font-semibold">Savatga</span>
+                    <span class="text-[11px] font-normal">Ertaga yetkazib beramiz</span>
+                </button>
+            </div>
+
+
+            <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+            <script>
+                var thumbsSwiper = new Swiper(".thumbsSwiper", {
+                    direction: "vertical",
+                    slidesPerView: "auto",
+                    spaceBetween: 8,
+                    watchSlidesProgress: true,
+                    freeMode: true,
+                });
+
+                var mainSwiper = new Swiper(".mainSwiper", {
+                    spaceBetween: 0,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    thumbs: {
+                        swiper: thumbsSwiper,
+                    },
+                });
+            </script>
+
+        </div>
+    </div>
+<div class="max-w-[1240px] mx-auto w-full px-[10px] md:px-0 py-[20px] ">
+    <div class="flex flex-col md:flex-row gap-[20px] items-start w-full ">
+
+        <div class="w-full md:flex-1">
+            
+            <div class="flex items-center gap-[10px]">
+                <h1 class="text-[30px] font-bold">{{ mahsulot.rate }}</h1>
+                <div class="flex gap-1">
+                    <img class="w-[24px]" src="https://img.icons8.com/?size=100&id=zX00FT5x6S7M&format=png&color=000000" alt="">
+                    <img class="w-[24px]" src="https://img.icons8.com/?size=100&id=zX00FT5x6S7M&format=png&color=000000" alt="">
+                    <img class="w-[24px]" src="https://img.icons8.com/?size=100&id=zX00FT5x6S7M&format=png&color=000000" alt="">
+                    <img class="w-[24px]" src="https://img.icons8.com/?size=100&id=zX00FT5x6S7M&format=png&color=000000" alt="">
+                    <img class="w-[24px]" src="https://img.icons8.com/?size=100&id=zX00FT5x6S7M&format=png&color=000000" alt="">
+                </div>
+                <p class="text-[16px] text-[#ccc]">508 sharh</p>
+            </div>
+
+            <div class="flex flex-wrap gap-[10px] mt-[10px]">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1le21146phmqehd70/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1lcq1146phmqehd5g/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8q17si1146phmqdo2ug/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1lcq1146phmqehd5g/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1lcq1146phmqehd5g/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1lcq1146phmqehd5g/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1lcq1146phmqehd5g/feedback_40.jpg" alt="">
+                <img class="w-[100px] h-[150px] object-cover rounded-[10px]" src="https://images.uzum.uz/d8s1lcq1146phmqehd5g/feedback_40.jpg" alt="">
+            </div>
+
+            <div class="mt-[20px] border-[2px] border-[#000] p-[20px] rounded-[15px]">
+                <p>22-iyun</p>
+                <div class="flex items-center mt-[5px]">
+                    <h1 class="font-bold">Afzalliklari:</h1>
+                    <p class="ml-[5px]">sifatli va hamyonbob mahsulot</p>
+                </div>
+                <div class="flex items-center mt-[5px]">
+                    <h1 class="font-bold">kamchikiklari:</h1>
+                    <p class="ml-[5px]">yo'q</p>
+                </div>
+                <div class="flex items-center mt-[5px]">
+                    <h1 class="font-bold">izoh:</h1>
+                    <p class="ml-[5px]">olish kerak</p>
+                </div>
+            </div>
+            
+            <button class="w-full h-[60px] bg-[#ccc] text-[#111] rounded-[10px] mt-[20px] font-bold ">Barchasini shaharini ko'rish</button>
+        </div>
+
+
+        <div class="w-full md:w-[350px] flex flex-col gap-[20px] transition-all duration-300">
+            
+            <div class="w-full border-[1px] border-[#e2e8f0] p-[15px] rounded-[10px] bg-white ">
+                <h1 class="font-bold text-[16px] text-[#111] mb-[4px]">Qulay usulda xavfsiz toʻlov</h1>
+                <p class="text-[14px] text-[#4b5563] mb-[12px]">Karta orqali, naqd pulda yoki boʻlib toʻlang</p>
+                <div class="flex items-center gap-[15px]">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 11.0603C1.5 9.3801 1.5 8.54002 1.82698 7.89828C2.1146 7.3338 2.57354 6.87485 3.13803 6.58723C3.77976 6.26025 4.61984 6.26025 6.3 6.26025H25.7C27.3802 6.26025 28.2202 6.26025 28.862 6.58723C29.4265 6.87485 29.8854 7.3338 30.173 7.89828C30.5 8.54002 30.5 9.3801 30.5 11.0603V21.0403C30.5 22.7204 30.5 23.5605 30.173 24.2022C29.8854 24.7667 29.4265 25.2257 28.862 25.5133C28.2202 25.8403 27.3802 25.8403 25.7 25.8403H6.3C4.61984 25.8403 3.77976 25.8403 3.13803 25.5133C2.57354 25.2257 2.1146 24.7667 1.82698 24.2022C1.5 23.5605 1.5 22.7204 1.5 21.0403V11.0603Z" fill="#7F4DFF"></path>
+                        <path d="M27.1491 6.27315C26.5229 6.44218 26.0499 6.79838 25.7715 7.27025C25.4805 6.78886 24.947 6.42599 24.332 6.26025H22.7364C21.5053 6.57008 20.8684 7.56959 20.8684 8.75768V12.2001H22.5409V9.0022C22.5409 8.31515 22.8941 7.71278 23.7053 7.71278C23.8699 7.70324 24.0369 7.72829 24.1896 7.78912C24.3447 7.84996 24.4855 7.9418 24.6024 8.06108C24.7193 8.18036 24.8087 8.3235 24.8684 8.48214C24.9256 8.64078 24.9519 8.80897 24.94 8.97715V12.2037H26.6125V8.97477C26.6125 8.28771 27.0109 7.70682 27.8126 7.70682C28.6143 7.70682 29.0008 8.31157 29.0008 8.99624V12.1941H30.5001V11.0603C30.5001 9.3801 30.5001 8.54002 30.1731 7.89828C29.8855 7.3338 29.4266 6.87485 28.8621 6.58723C28.4388 6.37155 27.9292 6.29814 27.1491 6.27315Z" fill="white" fill-opacity="0.9"></path>
+                        <path d="M1.50122 10.3586C1.91748 11.7459 3.26775 12.3099 4.3318 12.3099C5.60587 12.3099 7.28793 11.5 7.28793 9.43885V6.27435H5.61541L5.61899 9.37802C5.61899 10.3191 5.09887 10.7533 4.32942 10.7533C3.55996 10.7533 3.0458 10.3251 3.0458 9.37802V6.63633C2.5236 6.92575 2.09887 7.3649 1.8271 7.89828C1.54918 8.44373 1.50748 9.13247 1.50122 10.3586Z" fill="white" fill-opacity="0.9"></path>
+                        <path d="M13.4567 6.27435V7.71645L10.1176 10.7593H13.6571V12.2014H7.89516V10.7593L11.2402 7.71645H8.02638V6.27435H13.4567Z" fill="white" fill-opacity="0.9"></path>
+                        <path d="M17.1585 10.7533C17.9339 10.7533 18.454 10.3191 18.454 9.37802L18.4564 6.27435H20.1289V9.43885C20.1289 11.5 18.4349 12.3099 17.1668 12.3099C15.8987 12.3099 14.2083 11.5012 14.2083 9.43885V6.27435H15.8808V9.37802C15.8808 10.3251 16.383 10.7533 17.1585 10.7533Z" fill="white" fill-opacity="0.9"></path>
+                    </svg>
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_2471_92120)">
+                            <mask id="mask0_2471_92120" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="32" height="33">
+                                <rect y="0.000244141" width="32" height="32" fill="white"></rect>
+                            </mask>
+                            <g mask="url(#mask0_2471_92120)">
+                                <rect y="0.000244141" width="32" height="32" fill="#FF5733"></rect>
+
+                                <path d="M18.6167 1.59953C17.1715 0.154324 14.8284 0.154323 13.3832 1.59953L11.0494 3.93328H7.6337C5.58987 3.93328 3.93302 5.59013 3.93302 7.63396V11.0497L1.59929 13.3834C0.15408 14.8286 0.154079 17.1717 1.59928 18.6169L3.93302 20.9507V24.3664C3.93302 26.4102 5.58987 28.0671 7.6337 28.0671H11.0494L13.3832 30.4008C14.8284 31.846 17.1715 31.846 18.6167 30.4008L20.9505 28.0671H24.3661C26.41 28.0671 28.0668 26.4102 28.0668 24.3664V20.9507L30.4006 18.6169C31.8458 17.1717 31.8458 14.8286 30.4006 13.3834L28.0668 11.0496V7.63396C28.0668 5.59013 26.41 3.93328 24.3661 3.93328H20.9505L18.6167 1.59953Z" fill="#7000FF"></path>
+                                <path d="M16 6.18774C15.6305 6.18774 15.2673 6.2034 14.9072 6.23472L14.9009 11.3127H17.0929V6.23472C16.7328 6.18774 16.3695 6.18774 16 6.18774Z" fill="white"></path>
+                                <path d="M20.331 17.185C21.4797 16.0363 22.125 14.4784 22.125 12.8539V9.18706C21.3307 8.92171 20.5187 8.71244 19.6951 8.56079V12.832C19.6951 15.9039 18.3924 17.5103 16 17.5103C13.6076 17.5103 12.3081 15.9039 12.3081 12.832V8.56079C11.4835 8.71283 10.6705 8.92209 9.87501 9.18706V12.8539C9.87501 14.4784 10.5203 16.0363 11.669 17.185C12.8176 18.3336 14.3756 19.0002 16 19.0002C17.6245 19.0002 19.1824 18.3336 20.331 17.185Z" fill="white"></path>
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="w-full border-[1px] border-[#111] p-[10px] rounded-[10px] bg-white ">
+                <div class="flex items-center gap-[20px]">
+                    <img class="w-[56px] h-[56px] rounded-full object-cover" src="https://images.uzum.uz/cb3cq663p3gj5u38b8t0/shop_avatar_56_low.jpg" alt="">
+                    <div>
+                        <h1 class="font-bold text-[16px] text-[#111]">Do'kon nomi</h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<div class="w-full md:max-w-[1240px] mx-auto p-[20px] font-sans text-[#333333]">
+    
+    <div class="flex gap-[10px] mb-[25px]">
+        <button class="bg-[#1c1c1e] text-white text-[15px] px-[22px] py-[10px] rounded-[25px] font-medium cursor-pointer">
+            Mahsulot tavsifi
+        </button>
+        <button class="bg-[#e5e7eb] text-[#1c1c1e] text-[15px] px-[22px] py-[10px] rounded-[25px] font-medium cursor-pointer hover:bg-[#d1d5db]">
+            Tarkib
+        </button>
+        <button class="bg-[#e5e7eb] text-[#1c1c1e] text-[15px] px-[22px] py-[10px] rounded-[25px] font-medium cursor-pointer hover:bg-[#d1d5db]">
+            Ko'rsatma
+        </button>
+    </div>
+
+    <p class="text-[16px] md:text-[18px] leading-[26px] whitespace-pre-line text-[#222222]">
+        {{ mahsulot.tavsif }}
+    </p>
+
+</div>
+<style>
+    .mySwiper .swiper-slide {
+        width: auto;
+        flex-shrink: 0;
+    }
+</style>
+<h1 class="text-center text-[25px] font-semibold mb-[12px] md:ml-[-940px]">O'xshash mahsulotlar</h1>
+<div class="mx-auto md:w-[1240px] w-[330px] justify-content align-items pl-[-50px] md:pl-[-20px]">
+    {% load static %}
+
+    <div class="swiper mySwiper flex">
+        <div class="swiper-wrapper flex">
+
+            <div class="swiper-slide">
+                <div class="katta">
+                    <div class="relative cursor-pointer w-[24px] h-[24px]">
+                        <i class="fa-regular fa-heart absolute md:top-[30px] top-[30px] left-[105px] md:left-[250px] md:right-[20px] w-[24px] h-[20px] p-[2px] z-[2] bg-[#FFFFFF] rounded-full"></i>
+                    </div>
+
+                    <div class="relative cursor-pointer">
+                        <i class="absolute cursor-pointer md:top-[307px] md:left-[10px] font-bold left-[5px] top-[205px] w-[102px] text-[8px] h-[14px] flex p-[2px] z-[2] bg-[#FF4499] rounded-full">
+                            ARZON NARX KAFOLATI
+                        </i>
+                    </div>
+                    <div class="bg-white relative mx-auto justify-content cursor-pointer align-items md:h-[520px] h-[415px]">
+                        <div class="md:relative a md:pl-[5px] pr-[-155px]">
+                            <img src="https://images.uzum.uz/d6ohvolsp2tohdbe22cg/t_product_540_high.jpg" alt="" class="md:w-[269px] md:h-[325px] cursor-pointer w-[135px] h-[225px] rounded-[12px] ">
+                            <div class=" relative">
+                                <img class="w-[45px] absolute md:top-[-310px] top-[-200px] left-[-7px] md:left-[-7px]" src="https://static.uzum.uz/static/product_badge/6f469e5d-5e6c-4b16-b8e6-7b8135956bbe" alt="" class="absolute top-0 left-0 w-[100px] h-[100px]">
+                            </div>
+                            <div class="svg flex">
+                                <h2 class="text-[#000] font-semibold">349 990</h2>
+                            </div>
+                            <h2 class="text-[#ccc] line-through">623 000</h2>
+                            <h2 class="md:text-[12px] text-[9px] bg-[#FFFF00] text-black md:w-[105px] w-[80px] md:h-[18px] h-[15px] rounded-[5px]">
+                                24 790 so'm/oyiga
+                            </h2>
+                            <h2 class="text-[11px] text-[#8F63FF] font-semibold w-[115px]">Arzonlashdi</h2>
+                            <h2 class="text-[11px] text-[#4D4D52] md:w-[205px] w-[135px]">Saxovatli yoz tozalangan kungaboqar yog‘i, 5 l x 3 dona</h2>
+                            <h2 class="text-[11px] text-[#9FA1AB]">⭐ 5.0 (1656 sharhlar)</h2>
+                            <button class="bg-[#1722ea] absolute md:bottom-[-50px] absolute md:bottom-[-10px] bottom-[0px] flex text-white md:w-[269px] w-[135px] pt-[5px] h-[35px] md:pl-[55px] pl-[25px] pr-[20px] rounded-[5px]"><svg
+                                class="md:ml-[50px] mr-[5px] mt-[5px]" data-v-afbc5418="" width="16" height="16"
+                                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="ui-icon cart-button__icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.93384 4.90479V6.40055C4.93384 6.67669 5.1577 6.90055 5.43384 6.90055C5.70998 6.90055 5.93384 6.67669 5.93384 6.40055V4.90055H10.2672V6.40055C10.2672 6.6767 10.491 6.90055 10.7672 6.90055C11.0433 6.90055 11.2672 6.6767 11.2672 6.40055V4.90479C11.4272 4.90795 11.5656 4.91349 11.6891 4.92318C11.967 4.94496 12.1296 4.98556 12.2558 5.04548C12.5247 5.17311 12.7495 5.37785 12.9017 5.63364C12.9731 5.75371 13.0287 5.91178 13.0764 6.18643C13.125 6.46716 13.1593 6.82852 13.208 7.34854L13.311 8.44722C13.3368 8.72216 13.5806 8.92415 13.8555 8.89837C14.1305 8.8726 14.3324 8.62882 14.3067 8.35388L14.2018 7.23504C14.1554 6.73994 14.1178 6.33946 14.0616 6.01556C14.0037 5.68119 13.9201 5.38953 13.7611 5.12236C13.5075 4.69604 13.1328 4.35481 12.6846 4.14209C12.4038 4.00878 12.1056 3.95276 11.7673 3.92624C11.6064 3.91363 11.4276 3.90721 11.2285 3.90394C10.9902 2.39095 9.68046 1.23389 8.10051 1.23389C6.52056 1.23389 5.21086 2.39095 4.97256 3.90394C4.77338 3.90721 4.59458 3.91363 4.43373 3.92624C4.09541 3.95276 3.79722 4.00878 3.51637 4.14209C3.06825 4.35481 2.69353 4.69604 2.43991 5.12236C2.28096 5.38953 2.19736 5.68119 2.13937 6.01556C2.0832 6.33946 2.04566 6.73993 1.99925 7.23501L1.59526 11.5442C1.54017 12.1318 1.49588 12.6043 1.49241 12.9873C1.48886 13.3806 1.52662 13.7286 1.66648 14.0541C1.88752 14.5686 2.27487 14.9939 2.76646 15.262C3.0775 15.4317 3.42047 15.5018 3.81232 15.5349C4.19406 15.5672 4.66858 15.5672 5.25874 15.5672H8.10051C8.37665 15.5672 8.60051 15.3434 8.60051 15.0672C8.60051 14.7911 8.37665 14.5672 8.10051 14.5672H5.28121C4.66335 14.5672 4.23123 14.5668 3.89666 14.5385C3.56736 14.5106 3.38188 14.4586 3.24525 14.3841C2.9503 14.2233 2.71789 13.968 2.58527 13.6594C2.52383 13.5164 2.48938 13.3268 2.49237 12.9964C2.49541 12.6606 2.53532 12.2304 2.59299 11.6152L2.99299 7.34853C3.04175 6.82852 3.07598 6.46716 3.12467 6.18643C3.17229 5.91178 3.22789 5.75371 3.29932 5.63364C3.4515 5.37785 3.67633 5.17311 3.9452 5.04547C4.07142 4.98556 4.23399 4.94496 4.51188 4.92318C4.63541 4.91349 4.77386 4.90795 4.93384 4.90479ZM5.99182 3.90055H10.2092C9.98348 2.94499 9.12504 2.23389 8.10051 2.23389C7.07598 2.23389 6.21754 2.94499 5.99182 3.90055ZM12.1005 9.90055C12.3767 9.90055 12.6005 10.1244 12.6005 10.4006V11.9006H14.1005C14.3767 11.9006 14.6005 12.1244 14.6005 12.4006C14.6005 12.6767 14.3767 12.9006 14.1005 12.9006H12.6005V14.4006C12.6005 14.6767 12.3767 14.9006 12.1005 14.9006C11.8244 14.9006 11.6005 14.6767 11.6005 14.4006V12.9006H10.1005C9.82437 12.9006 9.60051 12.6767 9.60051 12.4006C9.60051 12.1244 9.82437 11.9006 10.1005 11.9006H11.6005V10.4006C11.6005 10.1244 11.8244 9.90055 12.1005 9.90055Z"
+                                    fill="white"></path>
+                            </svg>Ertaga</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="katta">
+                    <div class="relative cursor-pointer w-[24px] h-[24px]">
+                        <i class="fa-regular fa-heart absolute md:top-[30px] top-[30px] left-[105px] md:left-[250px] md:right-[20px] w-[24px] h-[20px] p-[2px] z-[2] bg-[#FFFFFF] rounded-full"></i>
+                    </div>
+
+                    <div class="relative cursor-pointer">
+                        <i class="absolute cursor-pointer md:top-[307px] md:left-[10px] font-bold left-[5px] top-[205px] w-[102px] text-[8px] h-[14px] flex p-[2px] z-[2] bg-[#FF4499] rounded-full">
+                            ARZON NARX KAFOLATI
+                        </i>
+                    </div>
+                    <div class="bg-white relative mx-auto justify-content cursor-pointer align-items md:h-[520px] h-[415px]">
+                        <div class="md:relative a md:pl-[5px] pr-[-155px]">
+                            <img src="https://images.uzum.uz/d6k2sg8s9rf3ubqva9n0/t_product_540_high.jpg" alt="" class="md:w-[269px] md:h-[325px] cursor-pointer w-[135px] h-[225px] rounded-[12px] ">
+                            <div class=" relative">
+                                <img class="w-[45px] absolute md:top-[-310px] top-[-200px] left-[-7px] md:left-[-7px]" src="https://static.uzum.uz/static/product_badge/6f469e5d-5e6c-4b16-b8e6-7b8135956bbe" alt="" class="absolute top-0 left-0 w-[100px] h-[100px]">
+                            </div>
+                            <div class="svg flex">
+                                <h2 class="text-[#000] font-semibold">349 990</h2>
+                            </div>
+                            <h2 class="text-[#ccc] line-through">623 000</h2>
+                            <h2 class="md:text-[12px] text-[9px] bg-[#FFFF00] text-black md:w-[105px] w-[80px] md:h-[18px] h-[15px] rounded-[5px]">
+                                24 790 so'm/oyiga
+                            </h2>
+                            <h2 class="text-[11px] text-[#8F63FF] font-semibold w-[115px]">Arzonlashdi</h2>
+                            <h2 class="text-[11px] text-[#4D4D52] md:w-[205px] w-[135px]">Saxovatli yoz tozalangan kungaboqar yog‘i, 5 l x 3 dona</h2>
+                            <h2 class="text-[11px] text-[#9FA1AB]">⭐ 5.0 (1656 sharhlar)</h2>
+                            <button class="bg-[#1722ea] absolute md:bottom-[-50px] absolute md:bottom-[-10px] bottom-[0px] flex text-white md:w-[269px] w-[135px] pt-[5px] h-[35px] md:pl-[55px] pl-[25px] pr-[20px] rounded-[5px]"><svg
+                                class="md:ml-[50px] mr-[5px] mt-[5px]" data-v-afbc5418="" width="16" height="16"
+                                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="ui-icon cart-button__icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.93384 4.90479V6.40055C4.93384 6.67669 5.1577 6.90055 5.43384 6.90055C5.70998 6.90055 5.93384 6.67669 5.93384 6.40055V4.90055H10.2672V6.40055C10.2672 6.6767 10.491 6.90055 10.7672 6.90055C11.0433 6.90055 11.2672 6.6767 11.2672 6.40055V4.90479C11.4272 4.90795 11.5656 4.91349 11.6891 4.92318C11.967 4.94496 12.1296 4.98556 12.2558 5.04548C12.5247 5.17311 12.7495 5.37785 12.9017 5.63364C12.9731 5.75371 13.0287 5.91178 13.0764 6.18643C13.125 6.46716 13.1593 6.82852 13.208 7.34854L13.311 8.44722C13.3368 8.72216 13.5806 8.92415 13.8555 8.89837C14.1305 8.8726 14.3324 8.62882 14.3067 8.35388L14.2018 7.23504C14.1554 6.73994 14.1178 6.33946 14.0616 6.01556C14.0037 5.68119 13.9201 5.38953 13.7611 5.12236C13.5075 4.69604 13.1328 4.35481 12.6846 4.14209C12.4038 4.00878 12.1056 3.95276 11.7673 3.92624C11.6064 3.91363 11.4276 3.90721 11.2285 3.90394C10.9902 2.39095 9.68046 1.23389 8.10051 1.23389C6.52056 1.23389 5.21086 2.39095 4.97256 3.90394C4.77338 3.90721 4.59458 3.91363 4.43373 3.92624C4.09541 3.95276 3.79722 4.00878 3.51637 4.14209C3.06825 4.35481 2.69353 4.69604 2.43991 5.12236C2.28096 5.38953 2.19736 5.68119 2.13937 6.01556C2.0832 6.33946 2.04566 6.73993 1.99925 7.23501L1.59526 11.5442C1.54017 12.1318 1.49588 12.6043 1.49241 12.9873C1.48886 13.3806 1.52662 13.7286 1.66648 14.0541C1.88752 14.5686 2.27487 14.9939 2.76646 15.262C3.0775 15.4317 3.42047 15.5018 3.81232 15.5349C4.19406 15.5672 4.66858 15.5672 5.25874 15.5672H8.10051C8.37665 15.5672 8.60051 15.3434 8.60051 15.0672C8.60051 14.7911 8.37665 14.5672 8.10051 14.5672H5.28121C4.66335 14.5672 4.23123 14.5668 3.89666 14.5385C3.56736 14.5106 3.38188 14.4586 3.24525 14.3841C2.9503 14.2233 2.71789 13.968 2.58527 13.6594C2.52383 13.5164 2.48938 13.3268 2.49237 12.9964C2.49541 12.6606 2.53532 12.2304 2.59299 11.6152L2.99299 7.34853C3.04175 6.82852 3.07598 6.46716 3.12467 6.18643C3.17229 5.91178 3.22789 5.75371 3.29932 5.63364C3.4515 5.37785 3.67633 5.17311 3.9452 5.04547C4.07142 4.98556 4.23399 4.94496 4.51188 4.92318C4.63541 4.91349 4.77386 4.90795 4.93384 4.90479ZM5.99182 3.90055H10.2092C9.98348 2.94499 9.12504 2.23389 8.10051 2.23389C7.07598 2.23389 6.21754 2.94499 5.99182 3.90055ZM12.1005 9.90055C12.3767 9.90055 12.6005 10.1244 12.6005 10.4006V11.9006H14.1005C14.3767 11.9006 14.6005 12.1244 14.6005 12.4006C14.6005 12.6767 14.3767 12.9006 14.1005 12.9006H12.6005V14.4006C12.6005 14.6767 12.3767 14.9006 12.1005 14.9006C11.8244 14.9006 11.6005 14.6767 11.6005 14.4006V12.9006H10.1005C9.82437 12.9006 9.60051 12.6767 9.60051 12.4006C9.60051 12.1244 9.82437 11.9006 10.1005 11.9006H11.6005V10.4006C11.6005 10.1244 11.8244 9.90055 12.1005 9.90055Z"
+                                fill="white"></path>
+                            </svg>Ertaga</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="katta">
+                    <div class="relative cursor-pointer w-[24px] h-[24px]">
+                        <i class="fa-regular fa-heart absolute md:top-[30px] top-[30px] left-[105px] md:left-[250px] md:right-[20px] w-[24px] h-[20px] p-[2px] z-[2] bg-[#FFFFFF] rounded-full"></i>
+                    </div>
+
+                    <div class="relative cursor-pointer">
+                        <i class="absolute cursor-pointer md:top-[307px] md:left-[10px] font-bold left-[5px] top-[205px] w-[102px] text-[8px] h-[14px] flex p-[2px] z-[2] bg-[#FF4499] rounded-full">
+                            ARZON NARX KAFOLATI
+                        </i>
+                    </div>
+                    <div class="bg-white relative mx-auto justify-content cursor-pointer align-items md:h-[520px] h-[415px]">
+                        <div class="md:relative a md:pl-[5px] pr-[-155px]">
+                            <img src="https://images.uzum.uz/d6ofjhq1146th72ubca0/t_product_540_high.jpg" alt="" class="md:w-[269px] md:h-[325px] cursor-pointer w-[135px] h-[225px] rounded-[12px] ">
+                            <div class=" relative">
+                                <img class="w-[45px] absolute md:top-[-310px] top-[-200px] left-[-7px] md:left-[-7px]" src="https://static.uzum.uz/static/product_badge/6f469e5d-5e6c-4b16-b8e6-7b8135956bbe" alt="" class="absolute top-0 left-0 w-[100px] h-[100px]">
+                            </div>
+                            <div class="svg flex">
+                                <h2 class="text-[#000] font-semibold">349 990</h2>
+                            </div>
+                            <h2 class="text-[#ccc] line-through">623 000</h2>
+                            <h2 class="md:text-[12px] text-[9px] bg-[#FFFF00] text-black md:w-[105px] w-[80px] md:h-[18px] h-[15px] rounded-[5px]">
+                                24 790 so'm/oyiga
+                            </h2>
+                            <h2 class="text-[11px] text-[#8F63FF] font-semibold w-[115px]">Arzonlashdi</h2>
+                            <h2 class="text-[11px] text-[#4D4D52] md:w-[205px] w-[135px]">Saxovatli yoz tozalangan kungaboqar yog‘i, 5 l x 3 dona</h2>
+                            <h2 class="text-[11px] text-[#9FA1AB]">⭐ 5.0 (1656 sharhlar)</h2>
+                            <button class="bg-[#1722ea] absolute md:bottom-[-50px] absolute md:bottom-[-10px] bottom-[0px] flex text-white md:w-[269px] w-[135px] pt-[5px] h-[35px] md:pl-[55px] pl-[25px] pr-[20px] rounded-[5px]"><svg
+                                class="md:ml-[50px] mr-[5px] mt-[5px]" data-v-afbc5418="" width="16" height="16"
+                                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="ui-icon cart-button__icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.93384 4.90479V6.40055C4.93384 6.67669 5.1577 6.90055 5.43384 6.90055C5.70998 6.90055 5.93384 6.67669 5.93384 6.40055V4.90055H10.2672V6.40055C10.2672 6.6767 10.491 6.90055 10.7672 6.90055C11.0433 6.90055 11.2672 6.6767 11.2672 6.40055V4.90479C11.4272 4.90795 11.5656 4.91349 11.6891 4.92318C11.967 4.94496 12.1296 4.98556 12.2558 5.04548C12.5247 5.17311 12.7495 5.37785 12.9017 5.63364C12.9731 5.75371 13.0287 5.91178 13.0764 6.18643C13.125 6.46716 13.1593 6.82852 13.208 7.34854L13.311 8.44722C13.3368 8.72216 13.5806 8.92415 13.8555 8.89837C14.1305 8.8726 14.3324 8.62882 14.3067 8.35388L14.2018 7.23504C14.1554 6.73994 14.1178 6.33946 14.0616 6.01556C14.0037 5.68119 13.9201 5.38953 13.7611 5.12236C13.5075 4.69604 13.1328 4.35481 12.6846 4.14209C12.4038 4.00878 12.1056 3.95276 11.7673 3.92624C11.6064 3.91363 11.4276 3.90721 11.2285 3.90394C10.9902 2.39095 9.68046 1.23389 8.10051 1.23389C6.52056 1.23389 5.21086 2.39095 4.97256 3.90394C4.77338 3.90721 4.59458 3.91363 4.43373 3.92624C4.09541 3.95276 3.79722 4.00878 3.51637 4.14209C3.06825 4.35481 2.69353 4.69604 2.43991 5.12236C2.28096 5.38953 2.19736 5.68119 2.13937 6.01556C2.0832 6.33946 2.04566 6.73993 1.99925 7.23501L1.59526 11.5442C1.54017 12.1318 1.49588 12.6043 1.49241 12.9873C1.48886 13.3806 1.52662 13.7286 1.66648 14.0541C1.88752 14.5686 2.27487 14.9939 2.76646 15.262C3.0775 15.4317 3.42047 15.5018 3.81232 15.5349C4.19406 15.5672 4.66858 15.5672 5.25874 15.5672H8.10051C8.37665 15.5672 8.60051 15.3434 8.60051 15.0672C8.60051 14.7911 8.37665 14.5672 8.10051 14.5672H5.28121C4.66335 14.5672 4.23123 14.5668 3.89666 14.5385C3.56736 14.5106 3.38188 14.4586 3.24525 14.3841C2.9503 14.2233 2.71789 13.968 2.58527 13.6594C2.52383 13.5164 2.48938 13.3268 2.49237 12.9964C2.49541 12.6606 2.53532 12.2304 2.59299 11.6152L2.99299 7.34853C3.04175 6.82852 3.07598 6.46716 3.12467 6.18643C3.17229 5.91178 3.22789 5.75371 3.29932 5.63364C3.4515 5.37785 3.67633 5.17311 3.9452 5.04547C4.07142 4.98556 4.23399 4.94496 4.51188 4.92318C4.63541 4.91349 4.77386 4.90795 4.93384 4.90479ZM5.99182 3.90055H10.2092C9.98348 2.94499 9.12504 2.23389 8.10051 2.23389C7.07598 2.23389 6.21754 2.94499 5.99182 3.90055ZM12.1005 9.90055C12.3767 9.90055 12.6005 10.1244 12.6005 10.4006V11.9006H14.1005C14.3767 11.9006 14.6005 12.1244 14.6005 12.4006C14.6005 12.6767 14.3767 12.9006 14.1005 12.9006H12.6005V14.4006C12.6005 14.6767 12.3767 14.9006 12.1005 14.9006C11.8244 14.9006 11.6005 14.6767 11.6005 14.4006V12.9006H10.1005C9.82437 12.9006 9.60051 12.6767 9.60051 12.4006C9.60051 12.1244 9.82437 11.9006 10.1005 11.9006H11.6005V10.4006C11.6005 10.1244 11.8244 9.90055 12.1005 9.90055Z"
+                                fill="white"></path>
+                            </svg>Ertaga</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="katta">
+                    <div class="relative cursor-pointer w-[24px] h-[24px]">
+                        <i class="fa-regular fa-heart absolute md:top-[30px] top-[30px] left-[105px] md:left-[250px] md:right-[20px] w-[24px] h-[20px] p-[2px] z-[2] bg-[#FFFFFF] rounded-full"></i>
+                    </div>
+
+                    <div class="relative cursor-pointer">
+                        <i class="absolute cursor-pointer md:top-[307px] md:left-[10px] font-bold left-[5px] top-[205px] w-[102px] text-[8px] h-[14px] flex p-[2px] z-[2] bg-[#FF4499] rounded-full">
+                            ARZON NARX KAFOLATI
+                        </i>
+                    </div>
+                    <div class="bg-white relative mx-auto justify-content cursor-pointer align-items md:h-[520px] h-[415px]">
+                        <div class="md:relative a md:pl-[5px] pr-[-155px]">
+                            <img src="https://images.uzum.uz/d8lrk6q1146tv07748s0/t_product_540_high.jpg" alt="" class="md:w-[269px] md:h-[325px] cursor-pointer w-[135px] h-[225px] rounded-[12px] ">
+                            <div class=" relative">
+                                <img class="w-[45px] absolute md:top-[-310px] top-[-200px] left-[-7px] md:left-[-7px]" src="https://static.uzum.uz/static/product_badge/6f469e5d-5e6c-4b16-b8e6-7b8135956bbe" alt="" class="absolute top-0 left-0 w-[100px] h-[100px]">
+                            </div>
+                            <div class="svg flex">
+                                <h2 class="text-[#000] font-semibold">349 990</h2>
+                            </div>
+                            <h2 class="text-[#ccc] line-through">623 000</h2>
+                            <h2 class="md:text-[12px] text-[9px] bg-[#FFFF00] text-black md:w-[105px] w-[80px] md:h-[18px] h-[15px] rounded-[5px]">
+                                24 790 so'm/oyiga
+                            </h2>
+                            <h2 class="text-[11px] text-[#8F63FF] font-semibold w-[115px]">Arzonlashdi</h2>
+                            <h2 class="text-[11px] text-[#4D4D52] md:w-[205px] w-[135px]">Saxovatli yoz tozalangan kungaboqar yog‘i, 5 l x 3 dona</h2>
+                            <h2 class="text-[11px] text-[#9FA1AB]">⭐ 5.0 (1656 sharhlar)</h2>
+                            <button class="bg-[#1722ea] absolute md:bottom-[-50px] absolute md:bottom-[-10px] bottom-[0px] flex text-white md:w-[269px] w-[135px] pt-[5px] h-[35px] md:pl-[55px] pl-[25px] pr-[20px] rounded-[5px]"><svg
+                                class="md:ml-[50px] mr-[5px] mt-[5px]" data-v-afbc5418="" width="16" height="16"
+                                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="ui-icon cart-button__icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.93384 4.90479V6.40055C4.93384 6.67669 5.1577 6.90055 5.43384 6.90055C5.70998 6.90055 5.93384 6.67669 5.93384 6.40055V4.90055H10.2672V6.40055C10.2672 6.6767 10.491 6.90055 10.7672 6.90055C11.0433 6.90055 11.2672 6.6767 11.2672 6.40055V4.90479C11.4272 4.90795 11.5656 4.91349 11.6891 4.92318C11.967 4.94496 12.1296 4.98556 12.2558 5.04548C12.5247 5.17311 12.7495 5.37785 12.9017 5.63364C12.9731 5.75371 13.0287 5.91178 13.0764 6.18643C13.125 6.46716 13.1593 6.82852 13.208 7.34854L13.311 8.44722C13.3368 8.72216 13.5806 8.92415 13.8555 8.89837C14.1305 8.8726 14.3324 8.62882 14.3067 8.35388L14.2018 7.23504C14.1554 6.73994 14.1178 6.33946 14.0616 6.01556C14.0037 5.68119 13.9201 5.38953 13.7611 5.12236C13.5075 4.69604 13.1328 4.35481 12.6846 4.14209C12.4038 4.00878 12.1056 3.95276 11.7673 3.92624C11.6064 3.91363 11.4276 3.90721 11.2285 3.90394C10.9902 2.39095 9.68046 1.23389 8.10051 1.23389C6.52056 1.23389 5.21086 2.39095 4.97256 3.90394C4.77338 3.90721 4.59458 3.91363 4.43373 3.92624C4.09541 3.95276 3.79722 4.00878 3.51637 4.14209C3.06825 4.35481 2.69353 4.69604 2.43991 5.12236C2.28096 5.38953 2.19736 5.68119 2.13937 6.01556C2.0832 6.33946 2.04566 6.73993 1.99925 7.23501L1.59526 11.5442C1.54017 12.1318 1.49588 12.6043 1.49241 12.9873C1.48886 13.3806 1.52662 13.7286 1.66648 14.0541C1.88752 14.5686 2.27487 14.9939 2.76646 15.262C3.0775 15.4317 3.42047 15.5018 3.81232 15.5349C4.19406 15.5672 4.66858 15.5672 5.25874 15.5672H8.10051C8.37665 15.5672 8.60051 15.3434 8.60051 15.0672C8.60051 14.7911 8.37665 14.5672 8.10051 14.5672H5.28121C4.66335 14.5672 4.23123 14.5668 3.89666 14.5385C3.56736 14.5106 3.38188 14.4586 3.24525 14.3841C2.9503 14.2233 2.71789 13.968 2.58527 13.6594C2.52383 13.5164 2.48938 13.3268 2.49237 12.9964C2.49541 12.6606 2.53532 12.2304 2.59299 11.6152L2.99299 7.34853C3.04175 6.82852 3.07598 6.46716 3.12467 6.18643C3.17229 5.91178 3.22789 5.75371 3.29932 5.63364C3.4515 5.37785 3.67633 5.17311 3.9452 5.04547C4.07142 4.98556 4.23399 4.94496 4.51188 4.92318C4.63541 4.91349 4.77386 4.90795 4.93384 4.90479ZM5.99182 3.90055H10.2092C9.98348 2.94499 9.12504 2.23389 8.10051 2.23389C7.07598 2.23389 6.21754 2.94499 5.99182 3.90055ZM12.1005 9.90055C12.3767 9.90055 12.6005 10.1244 12.6005 10.4006V11.9006H14.1005C14.3767 11.9006 14.6005 12.1244 14.6005 12.4006C14.6005 12.6767 14.3767 12.9006 14.1005 12.9006H12.6005V14.4006C12.6005 14.6767 12.3767 14.9006 12.1005 14.9006C11.8244 14.9006 11.6005 14.6767 11.6005 14.4006V12.9006H10.1005C9.82437 12.9006 9.60051 12.6767 9.60051 12.4006C9.60051 12.1244 9.82437 11.9006 10.1005 11.9006H11.6005V10.4006C11.6005 10.1244 11.8244 9.90055 12.1005 9.90055Z"
+                                fill="white"></path>
+                            </svg>Ertaga</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="katta">
+                    <div class="relative cursor-pointer w-[24px] h-[24px]">
+                        <i class="fa-regular fa-heart absolute md:top-[30px] top-[30px] left-[105px] md:left-[250px] md:right-[20px] w-[24px] h-[20px] p-[2px] z-[2] bg-[#FFFFFF] rounded-full"></i>
+                    </div>
+
+                    <div class="relative cursor-pointer">
+                        <i class="absolute cursor-pointer md:top-[307px] md:left-[10px] font-bold left-[5px] top-[205px] w-[102px] text-[8px] h-[14px] flex p-[2px] z-[2] bg-[#FF4499] rounded-full">
+                            ARZON NARX KAFOLATI
+                        </i>
+                    </div>
+                    <div class="bg-white relative mx-auto justify-content cursor-pointer align-items md:h-[520px] h-[415px]">
+                        <div class="md:relative a md:pl-[5px] pr-[-155px]">
+                            <img src="https://images.uzum.uz/d7dkq2i1146ojv9dtjfg/t_product_540_high.jpg" alt="" class="md:w-[269px] md:h-[325px] cursor-pointer w-[135px] h-[225px] rounded-[12px] ">
+                            <div class=" relative">
+                                <img class="w-[45px] absolute md:top-[-310px] top-[-200px] left-[-7px] md:left-[-7px]" src="https://static.uzum.uz/static/product_badge/6f469e5d-5e6c-4b16-b8e6-7b8135956bbe" alt="" class="absolute top-0 left-0 w-[100px] h-[100px]">
+                            </div>
+                            <div class="svg flex">
+                                <h2 class="text-[#000] font-semibold">349 990</h2>
+                            </div>
+                            <h2 class="text-[#ccc] line-through">623 000</h2>
+                            <h2 class="md:text-[12px] text-[9px] bg-[#FFFF00] text-black md:w-[105px] w-[80px] md:h-[18px] h-[15px] rounded-[5px]">
+                                24 790 so'm/oyiga
+                            </h2>
+                            <h2 class="text-[11px] text-[#8F63FF] font-semibold w-[115px]">Arzonlashdi</h2>
+                            <h2 class="text-[11px] text-[#4D4D52] md:w-[205px] w-[135px]">Saxovatli yoz tozalangan kungaboqar yog‘i, 5 l x 3 dona</h2>
+                            <h2 class="text-[11px] text-[#9FA1AB]">⭐ 5.0 (1656 sharhlar)</h2>
+                            <button class="bg-[#1722ea] absolute md:bottom-[-50px] absolute md:bottom-[-10px] bottom-[0px] flex text-white md:w-[269px] w-[135px] pt-[5px] h-[35px] md:pl-[55px] pl-[25px] pr-[20px] rounded-[5px]"><svg
+                                class="md:ml-[50px] mr-[5px] mt-[5px]" data-v-afbc5418="" width="16" height="16"
+                                viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                class="ui-icon cart-button__icon">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M4.93384 4.90479V6.40055C4.93384 6.67669 5.1577 6.90055 5.43384 6.90055C5.70998 6.90055 5.93384 6.67669 5.93384 6.40055V4.90055H10.2672V6.40055C10.2672 6.6767 10.491 6.90055 10.7672 6.90055C11.0433 6.90055 11.2672 6.6767 11.2672 6.40055V4.90479C11.4272 4.90795 11.5656 4.91349 11.6891 4.92318C11.967 4.94496 12.1296 4.98556 12.2558 5.04548C12.5247 5.17311 12.7495 5.37785 12.9017 5.63364C12.9731 5.75371 13.0287 5.91178 13.0764 6.18643C13.125 6.46716 13.1593 6.82852 13.208 7.34854L13.311 8.44722C13.3368 8.72216 13.5806 8.92415 13.8555 8.89837C14.1305 8.8726 14.3324 8.62882 14.3067 8.35388L14.2018 7.23504C14.1554 6.73994 14.1178 6.33946 14.0616 6.01556C14.0037 5.68119 13.9201 5.38953 13.7611 5.12236C13.5075 4.69604 13.1328 4.35481 12.6846 4.14209C12.4038 4.00878 12.1056 3.95276 11.7673 3.92624C11.6064 3.91363 11.4276 3.90721 11.2285 3.90394C10.9902 2.39095 9.68046 1.23389 8.10051 1.23389C6.52056 1.23389 5.21086 2.39095 4.97256 3.90394C4.77338 3.90721 4.59458 3.91363 4.43373 3.92624C4.09541 3.95276 3.79722 4.00878 3.51637 4.14209C3.06825 4.35481 2.69353 4.69604 2.43991 5.12236C2.28096 5.38953 2.19736 5.68119 2.13937 6.01556C2.0832 6.33946 2.04566 6.73993 1.99925 7.23501L1.59526 11.5442C1.54017 12.1318 1.49588 12.6043 1.49241 12.9873C1.48886 13.3806 1.52662 13.7286 1.66648 14.0541C1.88752 14.5686 2.27487 14.9939 2.76646 15.262C3.0775 15.4317 3.42047 15.5018 3.81232 15.5349C4.19406 15.5672 4.66858 15.5672 5.25874 15.5672H8.10051C8.37665 15.5672 8.60051 15.3434 8.60051 15.0672C8.60051 14.7911 8.37665 14.5672 8.10051 14.5672H5.28121C4.66335 14.5672 4.23123 14.5668 3.89666 14.5385C3.56736 14.5106 3.38188 14.4586 3.24525 14.3841C2.9503 14.2233 2.71789 13.968 2.58527 13.6594C2.52383 13.5164 2.48938 13.3268 2.49237 12.9964C2.49541 12.6606 2.53532 12.2304 2.59299 11.6152L2.99299 7.34853C3.04175 6.82852 3.07598 6.46716 3.12467 6.18643C3.17229 5.91178 3.22789 5.75371 3.29932 5.63364C3.4515 5.37785 3.67633 5.17311 3.9452 5.04547C4.07142 4.98556 4.23399 4.94496 4.51188 4.92318C4.63541 4.91349 4.77386 4.90795 4.93384 4.90479ZM5.99182 3.90055H10.2092C9.98348 2.94499 9.12504 2.23389 8.10051 2.23389C7.07598 2.23389 6.21754 2.94499 5.99182 3.90055ZM12.1005 9.90055C12.3767 9.90055 12.6005 10.1244 12.6005 10.4006V11.9006H14.1005C14.3767 11.9006 14.6005 12.1244 14.6005 12.4006C14.6005 12.6767 14.3767 12.9006 14.1005 12.9006H12.6005V14.4006C12.6005 14.6767 12.3767 14.9006 12.1005 14.9006C11.8244 14.9006 11.6005 14.6767 11.6005 14.4006V12.9006H10.1005C9.82437 12.9006 9.60051 12.6767 9.60051 12.4006C9.60051 12.1244 9.82437 11.9006 10.1005 11.9006H11.6005V10.4006C11.6005 10.1244 11.8244 9.90055 12.1005 9.90055Z"
+                                fill="white"></path>
+                            </svg>Ertaga</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            new Swiper('.mySwiper', {
+                slidesPerView: "auto",
+                spaceBetween: 12,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        spaceBetween: 14
+                    },
+                    768: {
+                        spaceBetween: 16
+                    },
+                    1024: {
+                        spaceBetween: 20
+                    }
+                }
+            });
+        });
+    </script>
+</div>
+<div class="md:max-w-[1240px] mx-auto my-0 max-w-[412px] md:pt-[6px] md:px-[12px] pt-[6px] px-[16px] pb-[16px] m text-start rounded-[20px] bg-[#FFFFFF]">
+    
+      <div id="terma" class="text-[24px] font-semibold pt-[16px] md:pb-[8px] mb-8px mb-[8px]">
+      Mahsulotlar termalari
+    </div>
+
+    <div class="md:max-w-[1396px] max-w-[520px] w-full md:flex md:flex-wrap md:gap-[20px] grid gap-[16px] md:mt-[10px] verflow-x-auto scrollni-olish">
+      <a href="#" class="bg-[#E6E8ED] w-fit py-[6px] px-[10px] font-medium text-[14px] rounded-[8px] whitespace-nowrap hover:bg-[#D0D3D9] cursor-pointer shrink-0">
+        500 000 so'mgacha Avtomobil aromatizatorlari
+      </a>
+
+      <a href="#" class="bg-[#E6E8ED] w-fit py-[6px] px-[10px] font-medium text-[14px] rounded-[8px] whitespace-nowrap hover:bg-[#D0D3D9] cursor-pointer shrink-0">
+        100 000 so'mgacha Avtomobil aromatizatorlari
+      </a>   
+    </div>
+
+  </div>
+
+
+
+{% endblock %}

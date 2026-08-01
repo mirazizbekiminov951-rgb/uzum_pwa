@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Инструкция Uzum Market</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="bg-white text-[#333] md:h-[100vh] md:overflow-hidden">
+
+    <div class="w-[100%] flex justify-between p-[20px] px-[25px] border-b-[2px] border-[#ccc] h-[73px] items-center bg-white">
+        <div class="flex items-center gap-[15px]">
+            <i class="fa-solid fa-bars text-[20px] md:hidden cursor-pointer"></i>
+           <a href="{% url 'sotuvchi_bolish' %}"> <img src="https://seller.uzum.uz/manual/uzum.svg" alt="" class="w-[119px] h-[35px] hidden md:block"></a>
+            <div class="w-[40px] h-[40px] bg-[#f0f1f3] flex items-center justify-center rounded-[15px] md:hidden">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+        </div>
+        
+        <div class="w-[466px] h-[41px] bg-[#f0f1f3] hidden md:flex justify-left items-center px-[15px] gap-[10px] rounded-[15px]">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" placeholder="Быстрый поиск" class="outline-none w-[450px] h-[100%] text-[14px]">
+        </div>
+        
+        <div class="flex items-center gap-[20px] text-[14px]">
+            <span class="hidden md:inline">Русский <i class="fa-solid fa-chevron-down"></i></span>
+            <span>Регистрация</span>
+            <span>Войти</span>
+        </div>
+    </div>
+
+    <div class="w-[100%] flex md:h-[100vh]">
+        
+        <div class="w-[280px] h-[100%] border-r-[1px] border-[#ccc] p-[20px] overflow-y-scroll hidden md:block shrink-0">
+            <div>
+                <div class="border-l-[2px] border-[red] pl-[10px] mb-[15px]">
+                    <a href="#" class="font-bold text-[red]">1. Как работает Uzum Market для продавцов</a> <br>
+                    <span class="ml-[10px] text-[red]">1.1 Принципы работы Uzum Market</span>  <br>
+                    <span class="ml-[10px] text-[#666]">1.2 Как работает фулфилмент Uzum</span>
+                </div>
+                
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">2. Требования к товарам и поставщикам</a> <br>
+                    <span class="ml-[10px] text-[#666]">2.1 Требования к поставщикам</span> <br>
+                    <span class="ml-[10px] text-[#666]">2.2 Ограничение на размер и стоимость</span> <br>
+                    <span class="ml-[10px] text-[#666]">2.3 Запрещено продавать на Uzum Market</span>
+                </div><div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">3. Тарифы и вывод выручки</a> <br>
+                    <span class="ml-[10px] text-[#666]">3.1 Вывод денег</span> <br>
+                    <span class="ml-[10px] text-[#666]">3.2 Тарифы маркетплейса</span>
+                </div>
+                
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">4. Управление заказами</a> <br>
+                    <span class="ml-[10px] text-[#666]">4.1 Создание поставки</span> <br>
+                    <span class="ml-[10px] text-[#666]">4.2 Штрихкодирование товаров</span>
+                </div>
+            </div>
+            <div>
+                
+                
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">2. Требования к товарам и поставщикам</a> <br>
+                    <span class="ml-[10px] text-[#666]">2.1 Требования к поставщикам</span> <br>
+                    <span class="ml-[10px] text-[#666]">2.2 Ограничение на размер и стоимость</span> <br>
+                    <span class="ml-[10px] text-[#666]">2.3 Запрещено продавать на Uzum Market</span>
+                </div>
+
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">3. Тарифы и вывод выручки</a> <br>
+                    <span class="ml-[10px] text-[#666]">3.1 Вывод денег</span> <br>
+                    <span class="ml-[10px] text-[#666]">3.2 Тарифы маркетплейса</span>
+                </div>
+                
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">4. Управление заказами</a> <br>
+                    <span class="ml-[10px] text-[#666]">4.1 Создание поставки</span> <br>
+                    <span class="ml-[10px] text-[#666]">4.2 Штрихкодирование товаров</span>
+                </div>
+            </div>
+            <div>
+               
+                
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">2. Требования к товарам и поставщикам</a> <br>
+                    <span class="ml-[10px] text-[#666]">2.1 Требования к поставщикам</span> <br>
+                    <span class="ml-[10px] text-[#666]">2.2 Ограничение на размер и стоимость</span> <br>
+                    <span class="ml-[10px] text-[#666]">2.3 Запрещено продавать на Uzum Market</span>
+                </div>
+
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">3. Тарифы и вывод выручки</a> <br>
+                    <span class="ml-[10px] text-[#666]">3.1 Вывод денег</span> <br>
+                    <span class="ml-[10px] text-[#666]">3.2 Тарифы маркетплейса</span>
+                </div>
+                
+                <div class="mb-[15px]">
+                    <a href="#" class="font-bold text-[#111]">4. Управление заказами</a> <br>
+                    <span class="ml-[10px] text-[#666]">4.1 Создание поставки</span> <br>
+                    <span class="ml-[10px] text-[#666]">4.2 Штрихкодирование товаров</span>
+                </div>
+            </div>
+        </div><div class="w-[100%] h-[100%] p-[25px] md:p-[50px] overflow-y-scroll bg-white">
+            <div class="w-[100%] max-w-[850px] mx-auto pb-[50px]">
+                
+                <h1 class="text-[26px] md:text-[40px] font-bold text-[#111] mb-[30px]">
+                    Инструкция по работе с маркетплейсом Uzum Market
+                </h1>
+
+                <h2 class="text-[22px] md:text-[30px] font-bold text-[#111] mb-[25px] flex items-start gap-[8px]">
+                    <span class="text-[red] font-bold">#</span>
+                    1. Как работает Uzum Market для продавцов
+                </h2>
+
+                <div class="text-[16px] md:text-[18px] text-[#333]">
+                    <p class="mb-[20px]">
+                        Уважаемые партнеры, добро пожаловать! Спасибо, что выбрали нашу площадку для совместного развития в сфере интернет-торговли. Мы создали простую и удобную систему, чтобы сотрудничество было комфортным. Маркетплейс Uzum Market работает по бизнес-модели максимальной эффективности — у нас бережливое производство. В работе мы применяем специальные методы и технологии, которые позволяют достигать лучших рыночных условий — как для продавцов, так и для покупателей.
+                    </p>
+                    <p class="mb-[20px]">
+                        Для вас это низкие комиссии без дополнительных сборов. Для ваших клиентов — быстрая и бесплатная доставка, высокий уровень сервиса и наиболее выгодные цены. Можем себе это позволить, потому что затраты на выполнение заказа в Uzum Market в 4,5 раза ниже, чем у конкурентов.
+                    </p>
+                    <p class="mb-[20px]">
+                        А чтобы вам было удобно с нами работать, мы создали целую экосистему: выстроили логистику, создали брендинговое агентство, организовали фотостудию, запустили Центр подготовки товаров и Академию. Наша задача — предложить максимум, чтобы сделать ваш бизнес проще, удобнее и эффективнее.
+                    </p>
+                    <p class="mb-[20px]">
+                        Реализовать эти и другие конкурентные преимущества мы сможем только с вашей помощью. Прежде чем приступить к работе, изучите эту инструкцию — займет около двух часов. В ней не только описан технический процесс запуска магазина, но и даны важные инструменты для увеличения продаж и развития вашего бренда.
+                    </p>
+                    <p class="mb-[20px]">
+                        Получить максимальную выгоду от сотрудничества с Uzum Market вы сможете, если будете следовать этой инструкции. Помните: мы создаем уникальную бизнес-модель, когда зарабатываете вы, а не только маркетплейс.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

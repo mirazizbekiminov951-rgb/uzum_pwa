@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta name="description"
+        content="ElektrikJan - Avtomobillar elektr tizimlarini diagnostika va ta'mirlash xizmati. ECU, sensorlar, signalizatsiya, starter, generator va barcha avtoelektrik muammolariga professional yechim.">
+    <meta name="keywords"
+        content="ElektrikJan, avtoelektrik, avtomobil elektrigi, ECU diagnostika, starter ta'miri, generator ta'miri, avto diagnostika, signalizatsiya o'rnatish, mashina elektrigi, auto electrician Uzbekistan">
+    <meta name="author" content="ElektrikJan">
+    <meta name="robots" content="index, follow">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Elektrikjan">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <link rel="apple-touch-icon" href="{% static 'icons/logo.jpg' %}">
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+    <meta name="theme-color" content="#0d6efd">
+    <link rel="apple-touch-icon" href="{% static 'icons/logo.jpg' %}">
+
+    <title>Document</title>
+</head>
+
+<body>
+    {% include "navigation.html" %}
+    {% block content %}
+    {% endblock %}
+    {% include "footer.html" %}
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    
+</body>
+
+</html>

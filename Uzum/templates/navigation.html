@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="w-full font-sans bg-white">
+
+        <div class="bg-[#f2f4f7] py-[6px]">
+            <div class="max-w-[1240px] mx-auto flex justify-between items-center px-[10px]">
+
+                <div class="flex items-center gap-[24px]">
+                    <div class="flex items-center space-x-[24px] text-[14px] text-[#4b5563]">
+                        <button id="ochish" class="flex items-center text-[#111111] select-none">
+                            <i class="fa-solid fa-location-dot mr-[6px] text-[#111111]"></i>
+                            <span class="font-medium">Toshkent</span>
+                            <i class="fa-solid fa-chevron-down ml-[6px] text-[12px] text-[#111111]"></i>
+                        </button>
+                    </div>
+                    <a href="{% url 'topshirish_punkiti' %}">
+
+                        <div class="text-[13px]  font-medium hover:text-black cursor-pointer hidden md:block">
+                            Topshirish punktlari
+                        </div>
+                    </a>
+                    
+                    <h3 class="text-[13px] font-medium text-[#90919A] md:hidden">yetkazib beriladigan shahar</h3>
+                </div>
+                <div id="shaharlar" class="hidden fixed inset-[0px] z-[50] flex items-center justify-center">
+
+                    <div id="orqafon" class="absolute inset-[0px] bg-black/40 backdrop-blur-[4px]"></div>
+
+                    <div
+                        class="relative bg-[#ffffff] w-full max-w-[540px] rounded-[12px] shadow-2xl overflow-hidden z-[10] mx-[16px]">
+
+                        <div class="p-[24px] pb-[16px] flex items-center justify-between">
+                            <h3 class="text-[22px] font-semibold text-[#111827]">Shaharni tanlang</h3>
+                            <button id="yopish"
+                                class="text-[#9ca3af] hover:text-[#4b5563] transition-colors text-[20px] p-[4px] focus:outline-none">
+                                <i class="fa-solid fa-xmark"></i>
+                            </button>
+                        </div>
+
+                        <div class="px-[24px] pb-[16px]">
+                            <div class="relative flex items-center">
+                                <i
+                                    class="fa-solid fa-magnifying-glass absolute left-[16px] text-[#9ca3af] text-[14px]"></i>
+                                <input type="text" placeholder="Shaharni topish"
+                                    class="w-full bg-[#f2f4f7] py-[12px] pl-[44px] pr-[16px] rounded-[12px] text-[16px] text-[#1f2937] placeholder-[#9ca3af] focus:outline-none border border-transparent focus:border-[#e5e7eb] transition-all">
+                            </div>
+                        </div>
+
+                        <div class="max-h-[350px] overflow-y-auto px-[8px] mb-[16px]">
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Abdukarim</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Ahmad Yassaviy</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Alaja</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Alamli</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Altinko'l (Qo'ng'irot tumani)</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Andijon</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                            <button
+                                class="w-full flex items-center justify-between px-[16px] py-[14px] hover:bg-[#f9fafb] rounded-[8px] text-left text-[#1f2937] transition-colors group">
+                                <span class="text-[16px] font-normal">Toshkent</span>
+                                <i
+                                    class="fa-solid fa-chevron-right text-[#d1d5db] text-[12px] group-hover:text-[#9ca3af] transition-colors"></i>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex items-center gap-[28px] text-[13px] text-[#62656a] font-medium hidden md:flex">
+                    <a href="{% url 'sotuvchi_bolish' %}" class="text-[#7000ff] hover:opacity-80">Sotuvchi bo‘lish</a>
+                    <a href="{% url 'sotuv' %}" class="text-[#7000ff] hover:opacity-80">Topshirish punktini ochish</a>
+                    <a href="#" class="hover:text-black">Savol-javob</a>
+                    <a href="#" class="hover:text-black">Buyurtmalarim</a>
+
+                    <div class="relative inline-block text-left p-[10px]">
+                        <button id="uzb"
+                            class="flex items-center pl-[5px] w-[117px] h-[32px] justify-center rounded-[6px]">
+                            <img class="w-[22px] h-[20px] rounded-[50px] mr-[7px]"
+                                src="https://as2.ftcdn.net/v2/jpg/08/17/59/19/1000_F_817591911_ufJgDxn20iIh9bIDodUqF6kbLW1ue4Re.jpg"
+                                alt="uz">
+                            <span class="text-gray-800 font-medium text-[14px]">O'zbekcha</span>
+                        </button>
+
+                        <div id="rus"
+                            class="hidden absolute justify-center left-[10px] w-[106px] bg-white rounded-[0px_0px_10px_10px]  z-[20]">
+                            <a href="#" class="flex items-center h-[32px] justify-start  pl-[5px] transition-colors">
+                                <img class="w-[22px] h-[15px] mr-[7px] rounded-[50px]"
+                                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Russia.png/250px-Flag_of_Russia.png"
+                                    alt="ru">
+                                <span class="text-gray-800 font-medium text-[14px]">Русский</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="py-[14px]">
+            <div class="max-w-[1240px] mx-auto flex items-center justify-between px-[16px] gap-[24px]">
+
+                <div class="flex items-center gap-[10px] cursor-pointer flex-shrink-0 hidden md:flex">
+                    <a href="{% url 'home' %}"><img
+                            src="https://upload.wikimedia.org/wikipedia/commons/e/ed/Uzum-Market-Logo.png" alt=""
+                            class="w-[215px] h-[32px]"></a>
+                </div>
+
+                <button
+                    class="hidden md:flex items-center gap-[10px] bg-[#e5efff] text-[#337fff] px-[20px] py-[11px] rounded-[8px] font-semibold text-[14px] hover:bg-[#d5e5ff] transition flex-shrink-0">
+                    <span id="catalogBtn">Katalog</span>
+                </button>
+
+
+                <div
+                    class="flex flex-1 items-center border-[1px] border-[rgba(0,0,0,0.1)] rounded-[8px] overflow-hidden">
+                    <input type="text" placeholder="Mahsulotlar va turkumlar izlash"
+                        class="w-full bg-white px-[18px] py-[11px] text-[14px] text-black outline-none placeholder-[#a0a5ac]" />
+                    <button
+                        class="bg-[#f2f4f7] px-[26px] py-[11px] text-[#62656a] hover:bg-[#e4e6ea] flex items-center justify-center border-l-[1px] border-[rgba(0,0,0,0.05)]">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+
+                <div
+                    class="flex items-center gap-[28px] text-[14px] hidden md:block font-medium text-[#1f2021] flex-shrink-0 hidden md:flex">
+                    <a href="http://127.0.0.1:8000/auth/register/"
+                        class="flex items-center hidden md:block gap-[8px] cursor-pointer hover:text-[#7000ff]">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Kirish</span>
+                </div>
+                </a>
+                <div class="flex items-center hidden md:block gap-[8px] cursor-pointer hover:text-[#7000ff]">
+                    <i class="fa-solid fa-heart"></i>
+                    <span>Saralangan</span>
+                </div>
+                <a href="http://127.0.0.1:8000/savat/">
+                    <div class="flex items-center hidden md:block gap-[8px] cursor-pointer hover:text-[#7000ff]">
+                        <i class="fa-solid fa-cart-arrow-down"></i>
+                        <span>Savat</span>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="py-[6px] border-b-[1px] border-[#e4e6ea] hidden md:flex">
+        <div class="max-w-[1240px] mx-auto flex items-center justify-between px-[16px] text-[14px] text-[#62656a]">
+
+            <div class="flex items-center gap-[22px] flex-wrap font-medium">
+                <a href="#" class="flex items-center gap-[6px] text-black hover:text-[#7000ff]">
+                    <img src="https://static.uzum.uz/baner/leto.png" alt="" width="24" height="24">
+                    <span>Yozgi chegirmalar</span>
+                </a>
+                <a href="#" class="flex items-center gap-[6px] text-black hover:text-[#7000ff]">
+                    <img src="https://static.uzum.uz/baner/futbal1905.png" alt="" width="24" height="24">
+                    <span>Futbol</span>
+                </a>
+                <a href="#" class="flex items-center gap-[6px] text-black hover:text-[#7000ff]">
+                    <img src="https://static.uzum.uz/banners/feshn202.png" alt="" width="24" height="24">
+                    <span>Yozgi kolleksiya</span>
+                </a>
+                <a href="#" class="flex items-center gap-[6px] text-black hover:text-[#7000ff]">
+                    <img src="https://static.uzum.uz/baner/gnc1405.png" alt="" width="24" height="24">
+                    <span>Arzon narxlar kafolati</span>
+                </a>
+                <a href="#" class="flex items-center gap-[6px] text-black hover:text-[#7000ff]">
+                    <img src="https://static.uzum.uz/banners/krasotakatalog.jpg" alt="" width="24" height="24">
+                    <span>Sizning go‘zalligingiz</span>
+                </a>
+
+                <a href="#" class="hover:text-black font-normal ml-[4px]">Mebel</a>
+                <a href="#" class="hover:text-black font-normal">Turizm, baliq ovi va ovchilik</a>
+                <a href="#" class="hover:text-black font-normal">Elektronika</a>
+            </div>
+
+            <div
+                class="flex items-center gap-[4px] font-medium cursor-pointer text-[#62656a] hover:text-black ml-[10px] flex-shrink-0">
+                <span>Yana <i class="fa-solid fa-chevron-down"></i></span>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <section>
+        <div id="catalogContent" class="hidden flex w-[1200px] mx-auto my-0">
+            <div class="w-[330px] py-[12px] font-sans border-r border-[#f2f2f2]">
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><img src="https://static.uzum.uz/baner/leto.png"
+                                alt="rasm"></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Yozgi
+                            chegirmalar</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal group-hover:text-[#1f2026]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><img src="https://static.uzum.uz/baner/futbal1905.png"
+                                alt="rasm"></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Futbol</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal group-hover:text-[#1f2026]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><img src="https://static.uzum.uz/banners/feshn202.png"
+                                alt="rasm"></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Yozgi
+                            kolleksiya</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal group-hover:text-[#1f2026]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><img src="https://static.uzum.uz/baner/gnc1405.png"
+                                alt="rasm"></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Arzon narxlar
+                            kafolati</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal group-hover:text-[#1f2026]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><img src="https://static.uzum.uz/banners/krasotakatalog.jpg"
+                                alt="rasm"></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Sizning
+                            go'zalligingiz</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal">❯</span>
+                </div>
+
+                <div
+                    class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer bg-[#eef0f4] font-bold transition-colors group">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="32" height="32" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M 19.50,17.91 L 18.38,17.91 17.62,16.97 6.19,16.97 5.44,17.91 4.31,17.91 3.56,16.97 2.25,16.97 2.25,13.41 3.00,13.41 3.00,12.09 6.19,12.09 6.19,11.16 17.62,11.16 17.62,12.09 20.81,12.09 20.81,13.41 21.56,13.41 21.56,16.97 20.25,16.97 19.50,17.91 Z"
+                                    fill="#FF9601"></path>
+                                <path
+                                    d="M 19.69,12.84 L 4.12,12.84 3.84,12.56 3.84,7.31 4.22,6.56 5.06,5.91 18.75,5.91 19.59,6.56 19.97,7.31 19.97,12.56 19.69,12.84 Z"
+                                    fill="#FFCA80"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-semibold">Mebel</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 512 512" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_35_64)">
+                                    <path
+                                        d="M8.09638 422.984C16.9128 408.564 29.7309 401.002 46.6681 400.895C66.7649 400.769 86.8631 400.881 107.895 400.925C120.602 400.945 132.375 400.93 144.603 400.96C155.412 400.969 165.766 400.933 176.575 400.972C186.691 401.074 196.353 401.144 206.014 401.123C228.999 401.072 251.983 400.978 275.433 400.978C287.596 401.052 299.294 401.049 310.897 400.989C310.803 400.932 310.684 401.118 310.443 401.304C308.793 402.056 307.383 402.621 305.608 403.205C283.372 410.149 271.623 427.259 270.793 453.081C267.815 454.612 265.301 456.554 262.479 457.252C253.664 459.432 244.769 461.339 235.833 462.956C230.909 463.847 227.82 466.549 228.034 470.937C228.236 475.09 231.335 478.02 236.081 477.951C240.878 477.882 245.848 478.038 250.424 476.859C258.904 474.673 267.151 471.587 275.707 469.122C282.298 481.49 291.56 490.201 305.299 494.195C309.016 495.253 312.446 496.069 315.427 496.995C267.115 497.125 219.252 497.151 171.389 497.156C164.592 497.157 157.795 497.058 150.915 496.672C142.867 490.221 135.458 483.132 126.822 478.182C107.962 467.373 87.002 462.35 65.66 459.17C57.4689 457.949 49.1402 457.478 40.8548 457.136C36.4892 456.955 33.6687 459.651 33.179 464.114C32.7587 467.945 35.6926 471.152 40.0584 471.915C42.5132 472.344 44.9846 472.781 47.466 472.939C68.5395 474.282 89.0303 478.439 108.535 486.548C115.036 489.251 120.886 493.519 126.578 497.199C100.673 497.358 75.2049 498.007 49.7802 497.232C27.6815 496.559 11.2538 486.213 2.92137 464.848C2.62825 464.097 1.65582 463.61 1 463C1 462.555 1 462.111 1.31633 461.429C1.42178 460.461 1.21089 459.73 1 459C1 452.645 1 446.291 1 439.468C1 439 1.46659 438.927 1.98204 439.077C4.30218 439.119 6.14961 439.223 7.90492 438.87C25.1591 435.397 42.4167 436.836 59.4594 439.76C85.3187 444.196 110.965 449.878 136.826 454.298C150.209 456.585 163.714 455.036 176.858 451.493C182.669 449.926 185.2 445.584 183.632 440.677C182.319 436.566 178.501 435.234 172.789 436.571C168.594 437.553 164.345 438.668 160.075 438.903C141.694 439.915 123.513 438.383 105.658 433.688C73.6687 425.275 41.4268 419.17 8.09638 422.984ZM243.173 426.121C236.416 426.487 232.432 431.685 234.983 436.806C236.812 440.481 240.143 442.045 243.647 440.724C246.047 439.819 248.837 437.262 249.456 434.916C250.526 430.866 248.291 427.565 243.173 426.121Z"
+                                        fill="#C76D3D"></path>
+                                    <path
+                                        d="M513 462.666C512.375 463.527 511.443 463.93 511.172 464.6C506.615 475.872 500.087 485.411 488.807 491.012C480.076 495.346 470.985 497.851 460.405 496.758C457.099 495.647 454.541 494.837 452.224 493.784C454.321 492.513 456.391 491.743 457.996 490.412C462.432 486.736 466.674 482.826 471.357 478.93C473.308 478.345 474.915 477.896 476.475 477.321C488.056 473.052 496.704 460.569 495.975 449.217C495.56 442.767 490.985 439.795 484.926 442.037C483.991 442.383 483.048 442.705 482.084 442.62C479.986 426.393 471.418 415.038 457.993 406.961C456.218 405.893 454.676 404.435 453.281 402.926C455.032 402.167 456.528 401.638 458.023 401.109C470.913 400.008 483.131 401.466 493.778 409.805C501.147 415.576 507.289 422.165 510.26 431.281C510.753 432.793 511.68 434.164 512.703 435.3C513 442.687 513 450.375 512.707 458.687C512.609 459.875 512.805 460.437 513 461C513 461.444 513 461.889 513 462.666Z"
+                                        fill="#E09A78"></path>
+                                    <path
+                                        d="M1 459.333C1.21089 459.731 1.42178 460.461 1.31633 461.096C0.999997 460.556 0.999997 460.111 1 459.333Z"
+                                        fill="#030201"></path>
+                                    <path
+                                        d="M144.148 400.916C132.375 400.931 120.602 400.945 108.357 400.929C98.0803 387.878 88.8621 374.493 82.1228 359.563C73.8469 341.228 67.7228 322.261 65.9182 302.128C65.0054 291.946 63.767 281.682 64.1708 271.515C65.1325 247.299 69.9815 223.859 79.624 201.404C86.3451 185.752 95.4238 171.649 105.175 157.848C108.163 153.619 112.455 153.639 116.73 153.921C120.501 154.17 122.821 156.487 124.208 160.134C130.701 177.208 138.432 193.651 148.974 208.693C153.555 215.23 155.751 215.334 160.976 209.615C169.204 200.609 177.584 191.703 186.411 183.292C199.284 171.027 209.32 156.798 216.452 140.67C223.98 123.644 228.06 105.573 226.663 86.9544C225.61 72.9304 222.489 59.0674 220.449 45.1094C219.43 38.1345 218.768 31.1072 218.287 23.8828C223.161 25.9797 227.636 28.4169 232.234 30.5954C259.474 43.5017 282.137 62.1303 300.998 85.5086C323.845 113.828 339.243 145.738 347.13 181.281C351.913 202.833 353.436 224.659 352.979 246.667C352.891 250.918 354.495 254.275 358.354 256.015C362.412 257.844 366.417 257.483 370.023 254.47C373.211 251.808 376.662 249.451 379.758 246.692C383.143 243.675 387.142 243.145 390.958 244.496C395.112 245.967 397.421 249.613 397.891 254.107C400.474 278.811 399.168 303.281 392.574 327.277C390.532 334.711 387.218 341.795 384.452 348.637C384.207 341.272 384.406 334.266 383.675 327.359C382.9 320.03 377.032 317.865 371.063 322.239C367.978 324.499 365.086 327.101 361.765 328.924C360.117 329.829 357.181 330.13 355.772 329.228C354.418 328.361 353.787 325.613 353.697 323.652C353.309 315.198 353.584 306.705 352.981 298.272C351.314 274.955 344.039 253.34 332.11 233.306C317.519 208.802 297.951 189.652 271.684 177.818C261.236 173.112 250.247 170.621 238.856 170.118C233.041 169.86 230.976 172.445 231.724 178.382C232.709 184.394 233.512 189.999 234.683 195.525C240.594 223.404 236.921 249.319 218.318 271.779C211.116 280.475 202.877 288.317 195.034 296.475C190.366 301.33 187.308 301.314 184.069 295.482C178.752 285.909 173.974 276.025 169.256 266.135C166.367 260.08 160.804 258.823 156.757 264.036C135.518 291.388 127.079 322.445 130.505 356.782C132.062 372.388 137.262 386.927 144.148 400.916Z"
+                                        fill="#FB6A3B"></path>
+                                    <path
+                                        d="M384.486 349.04C387.218 341.795 390.532 334.711 392.574 327.277C399.168 303.281 400.474 278.811 397.891 254.107C397.421 249.613 395.112 245.968 390.958 244.496C387.142 243.145 383.143 243.675 379.758 246.692C376.662 249.451 373.211 251.808 370.023 254.471C366.417 257.483 362.412 257.844 358.354 256.015C354.495 254.275 352.891 250.918 352.979 246.667C353.436 224.659 351.913 202.833 347.13 181.282C339.243 145.738 323.845 113.828 300.998 85.5087C282.137 62.1305 259.474 43.5019 232.234 30.5955C227.636 28.4171 223.161 25.9798 218.395 23.4469C220.225 18.1758 223.845 16.0298 230.95 16.8475C239.206 17.7976 247.454 19.0831 255.584 20.8014C277.942 25.5273 297.653 36.1104 315.558 49.8739C349.365 75.8616 373.272 109.227 388.278 149.154C395.529 168.447 400.676 188.171 401.982 208.72C402.875 222.779 402.782 236.9 403.107 250.994C403.168 253.666 402.544 256.513 403.279 258.967C404.043 261.518 406.287 262.939 409.128 260.847C415.595 256.083 422.159 251.446 428.511 246.534C432.192 243.687 436.093 241.929 440.655 243.25C445.15 244.552 447.44 247.866 448.11 252.568C453.149 287.945 447.765 321.844 433.932 354.597C426.934 371.165 417.318 386.128 405.849 400.663C404.189 402.162 402.875 403.155 401.785 404.353C390.806 416.416 379.112 427.655 365.027 435.996C362.511 430.489 360.165 425.344 358.082 419.956C363.289 411.503 368.788 403.569 373.05 395.019C380.225 380.623 383.384 365.043 384.486 349.04Z"
+                                        fill="#FB5532"></path>
+                                    <path
+                                        d="M451.983 494.028C454.541 494.838 457.099 495.647 459.965 496.687C458.119 497.032 455.965 497.243 453.81 497.245C410.49 497.291 367.171 497.312 323.697 496.912C326.452 495.817 329.418 495.333 332.258 494.448C350.176 488.863 360.74 476.336 366.015 458.857C367.452 458.737 368.814 458.684 369.819 458.058C391.591 444.496 410.252 427.481 425.853 407.132C427.213 405.358 427.972 403.124 429.011 401.103C438.374 401.041 447.738 400.978 457.562 401.013C456.528 401.638 455.032 402.167 452.908 402.929C450.861 403.613 449.401 403.961 448.031 404.528C428.174 412.743 416.543 431.5 418.072 452.783C419.449 471.95 433.636 489.204 451.983 494.028Z"
+                                        fill="#AA5E33"></path>
+                                    <path
+                                        d="M7.90039 423.28C41.4269 419.17 73.6687 425.275 105.658 433.688C123.513 438.383 141.694 439.915 160.075 438.903C164.345 438.668 168.594 437.553 172.789 436.571C178.501 435.234 182.319 436.566 183.632 440.677C185.2 445.584 182.669 449.926 176.858 451.493C163.714 455.036 150.209 456.585 136.826 454.298C110.965 449.878 85.3187 444.196 59.4595 439.76C42.4167 436.836 25.1591 435.397 7.90494 438.87C6.14963 439.223 4.30219 439.119 2.21295 439.027C3.85372 433.744 5.77905 428.66 7.90039 423.28Z"
+                                        fill="#AA5E33"></path>
+                                    <path
+                                        d="M125.632 36.044C143.44 35.3036 158.866 47.9826 158.992 67.6024C159.031 73.6011 159.113 79.6033 158.958 85.5982C158.841 90.0978 155.792 92.51 151.404 91.9963C138.659 90.5043 128.999 84.5166 124.178 72.3232C122.656 68.4737 122.248 64.0694 121.959 59.8757C121.594 54.5684 122.05 49.2087 121.805 43.8876C121.654 40.5963 122.469 38.0338 125.632 36.044Z"
+                                        fill="#FB6B3B"></path>
+                                    <path
+                                        d="M428.865 146.002C428.304 136.454 429.533 127.951 434.435 119.921C438.15 113.835 452.183 105.757 461.828 108.088C463.557 108.506 465.755 111.636 465.805 113.564C466.078 124.073 466.843 134.657 463.075 144.889C459.089 155.716 444.355 165.005 433.143 162.915C431.473 162.603 429.398 159.846 429.067 157.948C428.419 154.233 428.869 150.326 428.865 146.002Z"
+                                        fill="#FA6A3B"></path>
+                                    <path
+                                        d="M428.548 401.017C427.972 403.124 427.213 405.358 425.853 407.132C410.252 427.481 391.591 444.496 369.819 458.058C368.814 458.684 367.452 458.737 366.042 458.438C365.618 450.665 365.407 443.511 365.196 436.357C379.112 427.654 390.806 416.416 401.785 404.353C402.875 403.155 404.189 402.162 405.735 400.98C413.409 400.901 420.747 400.916 428.548 401.017Z"
+                                        fill="#9E552E"></path>
+                                    <path
+                                        d="M144.603 400.96C137.262 386.927 132.062 372.388 130.505 356.782C127.079 322.446 135.518 291.388 156.757 264.036C160.804 258.823 166.367 260.08 169.256 266.135C173.974 276.025 178.752 285.909 184.069 295.482C187.308 301.314 190.366 301.33 195.034 296.475C202.877 288.317 211.116 280.475 218.318 271.78C236.921 249.319 240.594 223.404 234.683 195.525C233.512 189.999 232.709 184.394 232.125 178.419C234.378 178.694 236.342 179.182 238.091 180.086C252.555 187.562 265.29 197.185 276.123 209.485C304.21 241.374 317.283 278.391 315.084 320.821C315.007 322.312 314.947 323.842 315.185 325.305C315.976 330.164 319.816 332.017 323.912 329.312C327.512 326.935 330.725 323.974 334.295 321.545C338.758 318.509 343.328 320.226 344.832 325.375C345.388 327.279 345.817 329.274 345.925 331.249C347.066 352.123 344.763 372.454 336.28 391.812C334.689 395.443 333.427 399.218 331.642 402.801C324.409 402.156 317.547 401.637 310.684 401.118C310.684 401.118 310.803 400.933 311.038 400.611C314.394 384.035 314.82 367.709 313.099 351.246C310.67 328.006 303.114 306.587 290.791 286.833C285.825 278.872 276.492 279.209 271.911 287.375C268.827 292.874 265.996 298.514 262.858 304.361C258.694 309.339 254.946 314.256 250.712 318.712C239.456 330.56 225.722 339.035 211.712 347.211C191.144 359.214 177.219 375.869 176.12 400.898C165.766 400.933 155.412 400.969 144.603 400.96Z"
+                                        fill="#FCC16D"></path>
+                                    <path
+                                        d="M176.575 400.972C177.219 375.868 191.144 359.214 211.712 347.211C225.722 339.035 239.456 330.56 250.712 318.711C254.946 314.255 258.694 309.338 263.101 304.594C264.725 307.112 266.039 309.617 267.08 312.231C274.682 331.32 278.05 351.262 277.801 371.696C277.682 381.441 275.962 391.167 274.967 400.902C251.983 400.978 228.999 401.072 206.014 401.123C196.353 401.144 186.691 401.074 176.575 400.972Z"
+                                        fill="#FFEED3"></path>
+                                    <path
+                                        d="M275.433 400.978C275.962 391.167 277.682 381.441 277.801 371.696C278.05 351.262 274.682 331.32 267.08 312.231C266.039 309.617 264.725 307.112 263.295 304.323C265.996 298.514 268.827 292.873 271.911 287.375C276.492 279.209 285.825 278.872 290.791 286.833C303.114 306.587 310.67 328.005 313.099 351.246C314.82 367.709 314.394 384.035 311.132 400.668C299.294 401.049 287.596 401.052 275.433 400.978Z"
+                                        fill="#FDDAA9"></path>
+                                    <path
+                                        d="M271.116 452.924C271.623 427.259 283.372 410.149 305.749 403.5C322.032 412.419 333.154 424.593 335.867 443.358C335.103 446.084 334.354 448.448 333.939 450.87C332.891 456.994 326.978 463.013 320.964 463.888C314.744 464.794 308.446 461.581 305.502 456.001C302.362 450.048 303.131 442.494 308.391 438.284C311.576 435.733 315.867 434.294 319.886 433.128C324.106 431.903 326.12 429.587 326.024 425.322C325.93 421.113 323.297 419.04 319.564 418.23C317.979 417.886 316.228 417.986 314.6 418.217C301.226 420.114 290.721 430.75 288.335 444.705C286.24 456.955 293.325 469.898 304.991 476.122C311.429 479.556 318.192 478.983 324.806 479.331C318.09 484.391 311.551 489.172 305.012 493.954C291.56 490.201 282.298 481.49 275.588 468.749C273.877 463.061 272.496 457.992 271.116 452.924Z"
+                                        fill="#EBBAA4"></path>
+                                    <path
+                                        d="M336.033 443.022C333.154 424.593 322.032 412.419 306.113 403.483C307.383 402.621 308.793 402.055 310.443 401.304C317.547 401.637 324.409 402.156 332.003 402.887C343.015 405.981 350.655 412.74 357.818 420.197C360.165 425.343 362.511 430.489 365.027 435.996C365.407 443.511 365.618 450.665 365.802 458.238C360.74 476.336 350.176 488.862 332.258 494.448C329.418 495.333 326.452 495.816 323.255 496.734C320.903 496.982 318.839 496.982 316.326 496.933C312.446 496.068 309.016 495.252 305.299 494.195C311.551 489.172 318.09 484.39 325.099 479.116C340.642 474.845 349.183 461.599 349.066 451.21C348.962 441.848 344.555 438.936 336.033 443.022Z"
+                                        fill="#E6AC8D"></path>
+                                    <path
+                                        d="M150.915 496.672C143.318 497.072 135.638 497.139 127.496 497.138C120.886 493.519 115.036 489.252 108.535 486.549C89.0303 478.439 68.5394 474.282 47.466 472.94C44.9846 472.781 42.5132 472.345 40.0584 471.915C35.6926 471.152 32.7587 467.945 33.179 464.114C33.6686 459.651 36.4892 456.956 40.8548 457.136C49.1402 457.478 57.4689 457.95 65.6599 459.17C87.002 462.35 107.962 467.373 126.822 478.183C135.458 483.132 142.867 490.221 150.915 496.672Z"
+                                        fill="#AB5E33"></path>
+                                    <path
+                                        d="M270.793 453.082C272.496 457.992 273.877 463.061 275.377 468.502C267.151 471.587 258.904 474.673 250.424 476.859C245.848 478.038 240.879 477.883 236.081 477.951C231.335 478.02 228.236 475.091 228.034 470.937C227.82 466.549 230.909 463.847 235.833 462.956C244.769 461.339 253.664 459.432 262.479 457.252C265.301 456.554 267.815 454.612 270.793 453.082Z"
+                                        fill="#AB5F34"></path>
+                                    <path
+                                        d="M243.557 426.193C248.291 427.564 250.526 430.866 249.456 434.916C248.837 437.262 246.047 439.819 243.647 440.724C240.143 442.045 236.812 440.481 234.983 436.806C232.432 431.684 236.416 426.487 243.557 426.193Z"
+                                        fill="#AB5F33"></path>
+                                    <path
+                                        d="M452.224 493.784C433.636 489.204 419.449 471.95 418.072 452.783C416.543 431.5 428.174 412.743 448.031 404.528C449.401 403.961 450.861 403.613 452.653 403.161C454.676 404.435 456.218 405.893 457.993 406.961C471.418 415.039 479.986 426.393 481.982 443.009C481.525 446.105 481.227 448.412 480.754 450.682C479.326 457.529 475.235 461.942 468.42 463.618C462.458 465.084 456.134 462.337 452.532 456.698C448.89 450.997 449.479 445.364 453.121 439.84C456.066 435.372 460.7 434.167 465.491 433.172C470.777 432.074 473.409 429.106 472.897 424.893C472.353 420.429 468.788 417.549 463.477 418.087C451.495 419.301 442.264 424.937 437.5 436.324C432.575 448.098 434.272 459.178 442.534 468.989C450.003 477.859 460.018 479.893 470.992 479.008C466.674 482.826 462.432 486.736 457.996 490.413C456.391 491.743 454.321 492.513 452.224 493.784Z"
+                                        fill="#E6AB8D"></path>
+                                    <path
+                                        d="M471.357 478.93C460.018 479.893 450.003 477.859 442.534 468.989C434.272 459.178 432.575 448.098 437.5 436.324C442.264 424.937 451.495 419.301 463.477 418.087C468.788 417.549 472.353 420.429 472.897 424.893C473.409 429.106 470.777 432.074 465.491 433.172C460.7 434.167 456.066 435.372 453.121 439.839C449.479 445.364 448.89 450.997 452.532 456.698C456.134 462.337 462.458 465.084 468.42 463.618C475.235 461.942 479.326 457.529 480.754 450.682C481.227 448.412 481.525 446.105 482.006 443.427C483.048 442.705 483.991 442.383 484.926 442.037C490.985 439.796 495.56 442.767 495.975 449.217C496.704 460.57 488.056 473.052 476.475 477.322C474.915 477.897 473.308 478.345 471.357 478.93Z"
+                                        fill="#D68F72"></path>
+                                    <path
+                                        d="M358.082 419.956C350.655 412.74 343.015 405.982 332.374 403.013C333.427 399.218 334.689 395.443 336.28 391.812C344.763 372.454 347.066 352.123 345.925 331.249C345.817 329.274 345.388 327.279 344.832 325.374C343.328 320.226 338.758 318.509 334.295 321.545C330.725 323.974 327.512 326.935 323.912 329.312C319.816 332.017 315.976 330.164 315.185 325.305C314.947 323.842 315.007 322.312 315.084 320.821C317.283 278.391 304.21 241.374 276.123 209.484C265.29 197.185 252.555 187.562 238.091 180.086C236.342 179.182 234.378 178.694 232.112 177.977C230.976 172.445 233.041 169.86 238.856 170.118C250.247 170.621 261.236 173.112 271.684 177.818C297.951 189.652 317.519 208.802 332.11 233.306C344.039 253.34 351.314 274.955 352.981 298.272C353.584 306.705 353.309 315.198 353.697 323.652C353.787 325.613 354.418 328.361 355.773 329.228C357.181 330.13 360.117 329.829 361.765 328.924C365.086 327.101 367.978 324.499 371.063 322.239C377.032 317.865 382.9 320.03 383.675 327.359C384.406 334.266 384.207 341.272 384.452 348.637C383.384 365.042 380.225 380.623 373.05 395.019C368.788 403.569 363.289 411.503 358.082 419.956Z"
+                                        fill="#FCB44D"></path>
+                                    <path
+                                        d="M335.867 443.358C344.555 438.936 348.962 441.848 349.066 451.21C349.183 461.599 340.642 474.846 325.276 478.838C318.192 478.983 311.429 479.557 304.991 476.122C293.325 469.898 286.24 456.955 288.335 444.705C290.721 430.75 301.226 420.115 314.6 418.217C316.228 417.986 317.979 417.886 319.564 418.23C323.297 419.04 325.93 421.114 326.024 425.322C326.12 429.587 324.106 431.903 319.886 433.128C315.867 434.294 311.576 435.733 308.391 438.284C303.131 442.495 302.362 450.048 305.502 456.001C308.446 461.581 314.744 464.794 320.964 463.888C326.978 463.013 332.891 456.994 333.939 450.87C334.354 448.449 335.103 446.084 335.867 443.358Z"
+                                        fill="#E09978"></path>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_35_64">
+                                        <rect width="512" height="512" fill="white"></rect>
+                                    </clipPath>
+                                </defs>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Turizm, baliq ovi va
+                            ovchilik</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal group-hover:text-[#1f2026]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M3 11C3 6.02944 7.02944 2 12 2C16.9706 2 21 6.02944 21 11V16H19V11C19 7.13401 15.866 4 12 4C8.13401 4 5 7.13401 5 11V16H3V11Z"
+                                    fill="#76797F"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5 13C3.89543 13 3 13.8954 3 15V19C3 20.1046 3.89543 21 5 21H7C8.10457 21 9 20.1046 9 19V15C9 13.8954 8.10457 13 7 13H5ZM17 13C15.8954 13 15 13.8954 15 15V19C15 20.1046 15.8954 21 17 21H19C20.1046 21 21 20.1046 21 19V15C21 13.8954 20.1046 13 19 13H17Z"
+                                    fill="#76797F"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Elektronika</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal group-hover:text-[#1f2026]">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.75" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7 18C5.89543 18 5 18.8954 5 20V22H19V20C19 18.8954 18.1046 18 17 18H7ZM12 21C12.5523 21 13 20.5523 13 20C13 19.4477 12.5523 19 12 19C11.4477 19 11 19.4477 11 20C11 20.5523 11.4477 21 12 21Z"
+                                    fill="#6226D9"></path>
+                                <path opacity="0.25"
+                                    d="M13 20C13 20.5523 12.5523 21 12 21C11.4477 21 11 20.5523 11 20C11 19.4477 11.4477 19 12 19C12.5523 19 13 19.4477 13 20Z"
+                                    fill="#6226D9"></path>
+                                <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M5 3C3.89543 3 3 3.89543 3 5V10C3 11.1046 3.89543 12 5 12H7V17H17L19 3H7H5ZM7 5H5V10H7V5Z"
+                                    fill="#6226D9"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M17.8571 11L17.7143 12H12V11H17.8571ZM18.2857 8L18.1429 9H12V8H18.2857ZM18.7143 5L18.5714 6H12V5H18.7143Z"
+                                    fill="#6226D9"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Maishiy texnika</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal ">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer ">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.75" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M7.99963 3H5V20C5 20.5523 5.44772 21 6 21H18C18.5523 21 19 20.5523 19 20V3H16.0004C15.0882 4.21445 13.6358 5 12 5C10.3642 5 8.91184 4.21445 7.99963 3Z"
+                                    fill="#1AB2FF"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.89431 4.55279L4.99989 3V9.25L4.39431 9.55279C3.90033 9.79978 3.29966 9.59955 3.05267 9.10557L1.4471 5.89443C1.20011 5.40045 1.40034 4.79978 1.89431 4.55279ZM22.1053 4.55279L18.9998 3V9.25L19.6053 9.55279C20.0993 9.79978 20.7 9.59955 20.947 9.10557L22.5525 5.89443C22.7995 5.40045 22.5993 4.79978 22.1053 4.55279Z"
+                                    fill="#1AB2FF"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Kiyim</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M2.00488 16.2129C2.3949 16.3047 2.79664 16.3939 3.50463 16.5171C4.92167 16.7635 6.89216 17.0097 9.10646 17.0097H21.6064C21.6064 17.5619 21.1587 18.0097 20.6064 18.0097H9.10646C6.82076 18.0097 4.79125 17.7558 3.33329 17.5023C2.60379 17.3754 2.41174 17.293 2.00488 17.1973V16.2129Z"
+                                    fill="#FF1919"></path>
+                                <path opacity="0.25"
+                                    d="M3.33305 16.5024C4.79101 16.7559 6.82052 17.0098 9.10622 17.0098H21.6064V15.0098C15.362 15.0098 9.72082 16.5983 3.50439 15.5172C2.79639 15.394 2.21582 15.2598 2.21582 15.2598L2.00879 16.2168C2.41565 16.3125 2.60354 16.3755 3.33305 16.5024Z"
+                                    fill="#FF1919"></path>
+                                <path opacity="0.75" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M2.21143 15.264C2.34012 14.784 2.60579 14.2594 3.10651 14.0091L3.10651 14.0099C3.10651 14.1765 3.50651 14.5099 5.10651 14.5099H8.36854C8.72227 14.5099 8.9636 14.1526 8.83223 13.8242L8.13284 12.0757C10.5602 11.1222 12.9662 10.0704 13.1065 9.50906C13.6065 7.50928 14.6065 6.50905 15.1065 6.00906C15.7649 5.35063 17.3464 6.55712 18.1965 7.20561L18.1965 7.20562L18.1965 7.20564C18.3671 7.33578 18.5082 7.44345 18.6065 7.50906C18.807 7.64287 19.1354 7.81662 19.4893 8.00383C20.2406 8.40125 21.1065 8.85934 21.1065 9.12486C21.1065 9.27507 21.1805 9.66244 21.2715 10.1392L21.2715 10.1392L21.2715 10.1393C21.4172 10.9021 21.6065 11.8939 21.6065 12.5093V15.0131C19.4405 15.0415 17.2863 15.2476 15.1366 15.4534H15.1366C11.2596 15.8244 7.3969 16.1941 3.50464 15.5172C2.99707 15.4289 2.56122 15.3407 2.21143 15.264ZM18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z"
+                                    fill="#FF1919"></path>
+                                <path opacity="0.25"
+                                    d="M5.10645 14.5097C3.50645 14.5097 3.10645 14.1764 3.10645 14.0097L8.13379 12.0796L8.83195 13.8239C8.96341 14.1523 8.72208 14.5097 8.3683 14.5097H5.10645Z"
+                                    fill="#FF1919"></path>
+                                <path opacity="0.25"
+                                    d="M20 12C20 13.1046 19.1046 14 18 14C16.8954 14 16 13.1046 16 12C16 10.8954 16.8954 10 18 10C19.1046 10 20 10.8954 20 12Z"
+                                    fill="#FF1919"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Poyabzallar</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.75" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8 6C6.34315 6 5 7.34315 5 9V17C5 15.3431 6.34315 14 8 14H16C17.6569 14 19 15.3431 19 17V9C19 7.34315 17.6569 6 16 6H8Z"
+                                    fill="#FF9500"></path>
+                                <path opacity="0.5"
+                                    d="M5 17C5 15.3431 6.34315 14 8 14H16C17.6569 14 19 15.3431 19 17V19C19 20.6569 17.6569 22 16 22H8C6.34315 22 5 20.6569 5 19V17Z"
+                                    fill="#FF9500"></path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8 6C8 3.79086 9.79086 2 12 2C14.2091 2 16 3.79086 16 6H14C14 4.89543 13.1046 4 12 4C10.8954 4 10 4.89543 10 6H8ZM5 11.1709C3.83481 11.5827 3 12.694 3 14.0002V18.0002C3 19.1048 3.89543 20.0002 5 20.0002H5.17071C5.06015 19.6874 5 19.3508 5 19.0002V11.1709ZM18.8293 20.0002H19C20.1046 20.0002 21 19.1048 21 18.0002V14.0002C21 12.694 20.1652 11.5827 19 11.1709V19.0002C19 19.3508 18.9398 19.6874 18.8293 20.0002ZM11 8C10.4477 8 10 8.44772 10 9V10C10 10.5523 10.4477 11 11 11H13C13.5523 11 14 10.5523 14 10V9C14 8.44772 13.5523 8 13 8H11Z"
+                                    fill="#FF9500"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Aksessuarlar</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal">❯</span>
+                </div>
+
+                <div class="flex items-center justify-between px-[16px] py-[10px] cursor-pointer">
+                    <div class="flex items-center gap-[12px]">
+                        <span class="w-[32px] h-[32px]"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.57651 4C6.27224 4 6.0385 4.26949 6.08154 4.57071L7.93868 17.5707C7.97387 17.817 8.18483 18 8.43365 18H15.5664C15.8152 18 16.0261 17.817 16.0613 17.5707L17.1429 10H6.85725L6.57153 8H17.4286L17.9185 4.57071C17.9615 4.26949 17.7278 4 17.4235 4H6.57651Z"
+                                    fill="#FF3388"></path>
+                                <path opacity="0.75" fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M6.85725 10L6.57153 8H17.4287L17.143 10H6.85725Z" fill="#FF3388"></path>
+                                <path
+                                    d="M9 18H15V20.5C15 21.3284 14.3284 22 13.5 22H10.5C9.67157 22 9 21.3284 9 20.5V18Z"
+                                    fill="#FF3388"></path>
+                            </svg></span>
+                        <span class="text-[16px] text-[#1f2026] font-medium hover:text-[#9CB4FF]">Go'zallik va
+                            parvarish</span>
+                    </div>
+                    <span class="text-[12px] text-[#a6a7b3] font-normal">❯</span>
+                </div>
+
+            </div>
+
+
+            <div class="p-[24px] ">
+                <h2
+                    class="text-[18px] font-bold text-[#1f2026] mb-[20px] flex items-center gap-[4px] cursor-pointer hover:text-[#7000ff]">
+                    Mebel
+                    <span class="text-[14px] text-[#a6a7b3] font-normal hover:text-[#1f2026]">❯</span>
+                </h2>
+
+                <div class="grid grid-cols-4 gap-x-[32px] gap-y-[24px]">
+
+                    <div>
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Karavot va matraslar</h3>
+                        <ul class="space-y-[8px] mb-[24px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Matraslar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Karavotlar</li>
+                            <li class="text-[14px]  text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Yotoqxona uchun
+                                mebel
+                                to'plamlari</li>
+                        </ul>
+
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Oshxona mebellari</h3>
+                        <ul class="space-y-[8px] mb-[24px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Oshxona
+                                burchaklari
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Oshxona
+                                garniturasi
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Oshxona modullari
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Oshxona
+                                xontaxtalari
+                            </li>
+                        </ul>
+
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Vannaxona uchun mebel</h3>
+                        <ul class="space-y-[8px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Rakovina uchun
+                                tumbalar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Vannaxona uchun
+                                mebel
+                                to'plamlari</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Vannaxona uchun
+                                shkaflar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Vannaxona uchun
+                                penallar</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Mebel
+                            uchun furnitura va butlovchi qismlar</h3>
+                        <ul class="space-y-[8px] mb-[24px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Mebel uchun
+                                butlovchi
+                                qismlar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Mebel uchun
+                                furnitura
+                            </li>
+                        </ul>
+
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Saqlash mebellari</h3>
+                        <ul class="space-y-[8px] mb-[24px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Komodlar va
+                                tumbalar
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Tokcha va
+                                javonlar
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Qavatli ilgichlar
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Shkaflar va
+                                garderoblar</li>
+                        </ul>
+
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Yumshoq mebel</h3>
+                        <ul class="space-y-[8px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Pufiklar ba
+                                banketkalar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Divanlar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Kreslolar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Yumshoq mebel
+                                to'plamlari</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Ofis
+                            va kompyuter mebellari</h3>
+                        <ul class="space-y-[8px] mb-[24px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Ofis kreslolari
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Geymerlar uchun
+                                kreslolari</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Seyflar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Partalar</li>
+                            <div
+                                class="text-[13px] text-[#4d4f5e] cursor-pointer flex items-center gap-[5px] mb-[25px] hover:text-[#9CB4FF]">
+                                Yana 3 <span><img width="16" height="16"
+                                        src="https://img.icons8.com/ios-filled/50/4d4f5e/expand-arrow--v1.png"
+                                        alt="expand-arrow--v1" /></span></div>
+                        </ul>
+
+                        <h3 class="text-[16px] font-bold text-[#1f2026] mb-[10px] cursor-pointer hover:text-[#9CB4FF]">
+                            Stollar va stullar</h3>
+                        <ul class="space-y-[8px]">
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Stullar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Jurnal stollari
+                            </li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Stollar</li>
+                            <li class="text-[14px] text-[#4d4f5e] cursor-pointer hover:text-[#9CB4FF]">Ovqatlanish
+                                guruhlari
+                            </li>
+                        </ul>
+                        <div
+                            class="text-[13px] text-[#4d4f53] cursor-pointer flex items-center gap-[4px] mt-[8px] hover:text-[#9CB4FF]">
+                            Yana 2 <span><img width="16" height="16"
+                                    src="https://img.icons8.com/ios-filled/50/4d4f5e/expand-arrow--v1.png"
+                                    alt="expand-arrow--v1" /></span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

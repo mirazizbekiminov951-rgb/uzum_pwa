@@ -1,0 +1,579 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+  <body>
+    <div class="w-[1200px] md:w-[1200px] mx-auto my-0 p-4 md:p-0">
+      <h2 class="text-[24px] font-bold text-center md:text-left">Uzum</h2>
+      <div
+        class="flex flex-col md:flex-row md:justify-between w-full md:w-[1420px] mt-[10px]"
+      >
+        <div
+          class="flex flex-col items-center md:items-start gap-2 md:gap-0 mb-4 md:mb-0 border-b border-t border-[#eee] py-2 md:border-none"
+        >
+          <span class="font-medium text-[16px]">Topshirish punktlari</span>
+          <span class="text-[#8b8e99] md:mt-[10px] text-[16px]">Vakansiyalar</span>
+        </div>
+        <div
+          class="w-full md:w-[1150px] h-auto p-[20px] md:p-[30px] border-[3px] border-[#8b8e99] md:ml-[20px]"
+        >
+          <h1 class="text-[32px] text-[#1f2026] font-semibold">
+            Topshirish punkti
+          </h1>
+          <span class="block text-[#1f2026] mb-4"
+            >Oʻzbekiston 619 ta shahridagi topshirish punktlariga bepul yetkazib
+            berish</span
+          >
+
+          <div
+            class="flex flex-col-reverse md:flex-row justify-between w-full md:w-[1051px] mt-[10px] gap-6"
+          >
+            <div>
+              <span class="block font-medium mb-1">Shaxar</span>
+              <select
+                name="cars"
+                id="moshinalar"
+                class="w-full md:w-[450px] h-[47px] bg-[#ddd] rounded-[20px] px-[10px] mb-4"
+              >
+                <option value="chevrolet">
+                  Toshkent <i class="fa-solid fa-chevron-down"></i>
+                </option>
+                <option value="byd">Buxoro</option>
+                <option value="kia">Andijon</option>
+                <option value="hyundai">Farg'ona</option>
+              </select>
+              
+              <div
+                class="h-[400px] md:h-[520px] overflow-y-auto pr-2 w-full md:w-[450px]"
+              >
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                <div class="flex flex-col mb-6">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+                
+                <div class="flex flex-col">
+                  <h4 class="text-[18px] font-semibold mt-[10px]">
+                    Toshkent sh., Mirobod tumani, Mehrjon <br />
+                    ko'chasi, 2 uy
+                  </h4>
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-shirt"></i> Kiyib ko'rish joyi
+                    bor</span
+                  >
+                  <span class="text-[#8b8e99] mt-[10px]"
+                    ><i class="fa-solid fa-location-dot"></i> Toshkent sh.,
+                    Mirobod tumani, Mehrjon ko'chasi, 2 uy</span
+                  >
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] mt-[10px]"
+                  >
+                    <div>
+                      <i class="fa-solid fa-clock"></i>
+                      <span>Dushanba:</span>
+                    </div>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-[#8b8e99] w-full md:w-[380px] ml-[20px]"
+                  >
+                    <span>Seshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] text-[#8b8e99] ml-[20px]"
+                  >
+                    <span>Chorshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Payshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Juma:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Shanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                  <div
+                    class="flex justify-between items-center w-full md:w-[380px] ml-[20px] text-[#8b8e99]"
+                  >
+                    <span>Yakshanba:</span>
+                    <span>10:00-12:00</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <div
+                class="mapouter max-w-full h-[320px] md:h-[650px] mb-4 md:mb-0"
+              >
+                <div class="gmap_canvas max-w-full h-[320px] md:h-[677px]">
+                  <iframe
+                    class="gmap_iframe w-full md:w-[612px] h-[320px] md:h-[677px]"
+                    frameborder="0"
+                    scrolling="no"
+                    marginheight="0"
+                    marginwidth="0"
+                    src="https://maps.google.com/maps?width=612&height=677&hl=en&q=Uzbekistan&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                  ></iframe><a href="https://connectionssports.net/"
+                    >Sports Connections</a
+                  >
+                </div>
+                <style>
+                  @media (min-width: 768px) {
+                    .mapouter {
+                      width: 590px;
+                      height: 650px;
+                    }
+                    .gmap_canvas {
+                      width: 612px;
+                      height: 677px;
+                    }
+                    .gmap_iframe {
+                      width: 612px !important;
+                      height: 677px !important;
+                    }
+                  }
+                  @media (max-width: 767px) {
+                    .mapouter,
+                    .gmap_canvas,
+                    .gmap_iframe {
+                      width: 100% !important;
+                    }
+                  }
+                  .mapouter {
+                    position: relative;
+                    text-align: right;
+                  }
+                  .gmap_canvas {
+                    overflow: hidden;
+                    background: none !important;
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+{% endblock %}

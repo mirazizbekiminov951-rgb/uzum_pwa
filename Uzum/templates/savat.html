@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<body>
+    <div class="max-w-6xl mx-auto p-4 font-sans text-gray-900 py-[50px]">
+  
+  <h1 class="text-2xl font-bold mb-4">
+    Savatingiz, <span class="text-gray-400 font-normal">1 mahsulot</span>
+  </h1>
+
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    
+    <div class="lg:col-span-2 space-y-4">
+      <div class="border border-gray-200 rounded-2xl p-4 bg-white space-y-4">
+        
+        
+        <div class="flex items-center justify-between pb-3 border-b border-gray-100 text-sm">
+          <label class="flex items-center space-x-2 cursor-pointer select-none">
+            <input type="checkbox" checked class="w-4 h-4 accent-black rounded" />
+            <span class="font-medium">Hammasini yechish</span>
+          </label>
+          <button class="text-gray-500 hover:text-gray-700 text-xs sm:text-sm">
+            Tanlanganlarni o'chirish
+          </button>
+        </div>
+
+        
+        <div>
+          <p class="text-xs text-gray-400">Uzum Market yetkazib berishi</p>
+          <p class="font-semibold text-base">Ertaga yetkazib beramiz</p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-2">
+          <div class="flex items-start space-x-3">
+            <input type="checkbox" checked class="w-4 h-4 accent-black rounded mt-1" />
+            
+            
+            <img 
+              src="https://images.uzum.uz/d6nvj3dsp2tohdbdqp30/t_product_240_high.jpg" 
+              alt="Bug'doy uni MAKFA" 
+              class="w-20 h-20 object-cover rounded-lg border border-gray-100 flex-shrink-0"
+            />
+
+            
+            <div>
+              <h3 class="font-medium text-sm sm:text-base leading-snug">
+                Bug'doy uni MAKFA , yuqori nav, 2 kg
+              </h3>
+              <p class="text-xs text-gray-400 mt-2">
+                Sotuvchi: <span class="text-gray-600">Balton</span>
+              </p>
+            </div>
+          </div>
+
+          
+          <div class="flex items-center justify-between sm:justify-end sm:space-x-6 pl-7 sm:pl-0">
+        
+            <div class="flex items-center border border-gray-200 rounded-lg px-2 py-1 bg-gray-50">
+              <button class="w-6 h-6 flex items-center justify-center text-gray-400 hover:text-gray-700 font-bold">-</button>
+              <span class="w-8 text-center text-sm font-semibold">1</span>
+              <button class="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-black font-bold">+</button>
+            </div>
+
+            
+            <div class="text-right">
+              <div class="text-lg font-bold">24 990 so'm</div>
+              <div class="text-xs text-gray-400 line-through">24 990</div>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="flex justify-end pt-2">
+          <button class="text-gray-400 hover:text-red-500 transition-colors">
+            <svg xmlns="" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+            </svg>
+          </button>
+        </div>
+
+
+        
+        <div class="bg-gray-100 rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-gray-200/70 transition-colors">
+          <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 bg-white rounded-lg p-1 flex items-center justify-center border border-gray-200">
+              <img src="https://images.uzum.uz/d6nvj3dsp2tohdbdqp30/t_product_240_high.jpg" alt="Kerak bo'lib qolishi mumkin" class="object-cover rounded" />
+            </div>
+            <div>
+              <p class="text-sm font-medium flex items-center">Kerak bo'lib qolishi mumkin</p>
+              <p class="text-xs text-gray-500">Siz uchun tovarlar to'plami</p>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="space-y-4">
+      
+      <div class="border border-gray-200 rounded-2xl p-4 bg-white flex items-center justify-between cursor-pointer hover:border-gray-300">
+        <p class="text-xs font-medium text-gray-800 leading-relaxed pr-2">
+          Yana 45 010 so'm va yetkazish 3000 so'm bo'ladi
+        </p>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </div>
+
+     
+      <div class="border border-gray-200 rounded-2xl p-4 bg-white space-y-4">
+        <h2 class="text-lg font-bold">Buyurtmangiz</h2>
+
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between text-gray-600">
+            <span>1 mahsulot</span>
+            <span class="text-gray-900 font-medium">39 000 so'm</span>
+          </div>
+          <div class="flex justify-between text-gray-600">
+            <span>Chegirmalar</span>
+            <span class="text-gray-900 font-medium">-14 010 so'm</span>
+          </div>
+        </div>
+
+        <div class="pt-3 border-t border-gray-100 flex items-baseline justify-between">
+          <span class="text-sm font-medium">Jami</span>
+          <span class="text-xl font-bold">24 990 so'm</span>
+        </div>
+
+        
+        <button class="w-full bg-[#7000FF] hover:bg-[#6000e0] text-white font-medium py-3 px-4 rounded-xl flex items-center justify-center space-x-2 transition-colors">
+          <span class="w-1.5 h-4 bg-amber-400 rounded-full"></span>
+          <span>Rasmiylashtirishga o'tish</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+    
+</body>
+{% endblock %}
